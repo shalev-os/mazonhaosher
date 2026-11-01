@@ -3,7 +3,6 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ThemeProvider } from "@/contexts/ThemeContext";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import PageTransition from "@/components/PageTransition";
 import { HeroSkeleton } from "@/components/LoadingSkeleton";
@@ -14,28 +13,26 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 
 const App = () => (
   <ErrorBoundary>
-    <ThemeProvider>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner
-            position="top-center"
-            toastOptions={{
-              className: "!bg-card !text-foreground !border-border !shadow-lg !rounded-xl",
-              duration: 4000,
-            }}
-          />
-          <BrowserRouter>
-            <Suspense fallback={<HeroSkeleton />}>
-              <PageTransition>
-                <Routes>
-                  <Route path="/" element={<Index />} />
-                  <Route path="*" element={<NotFound />} />
-                </Routes>
-              </PageTransition>
-            </Suspense>
-          </BrowserRouter>
-        </TooltipProvider>
-    </ThemeProvider>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner
+        position="top-center"
+        toastOptions={{
+          className: "!bg-card !text-foreground !border-border !shadow-lg !rounded-xl",
+          duration: 4000,
+        }}
+      />
+      <BrowserRouter>
+        <Suspense fallback={<HeroSkeleton />}>
+          <PageTransition>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </PageTransition>
+        </Suspense>
+      </BrowserRouter>
+    </TooltipProvider>
   </ErrorBoundary>
 );
 

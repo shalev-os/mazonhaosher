@@ -6,6 +6,7 @@
 
 @layer base {
   :root {
+    color-scheme: light;
     --background: 30 30% 96%;
     --foreground: 20 25% 12%;
 
@@ -73,65 +74,11 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  .dark {
-    --background: 25 30% 10%;
-    --foreground: 30 25% 96%;
-
-    --card: 25 25% 8%;
-    --card-foreground: 30 25% 96%;
-
-    --popover: 25 25% 6%;
-    --popover-foreground: 30 25% 96%;
-
-    --primary: 350 80% 60%;
-    --primary-foreground: 25 25% 8%;
-
-    --secondary: 25 22% 15%;
-    --secondary-foreground: 30 25% 96%;
-
-    --muted: 25 20% 16%;
-    --muted-foreground: 30 15% 55%;
-
-    --accent: 280 75% 65%;
-    --accent-foreground: 25 25% 8%;
-
-    --destructive: 0 70% 35%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 25 20% 18%;
-    --input: 25 20% 18%;
-    --ring: 350 80% 60%;
-
-    /* Dark mode custom colors */
-    --coral: 15 85% 60%;
-    --amber: 40 95% 55%;
-    --teal: 175 70% 45%;
-    --violet: 280 75% 65%;
-    --sky: 200 90% 55%;
-    --emerald: 155 70% 45%;
-
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
 }
 
 @layer base {
   * {
     @apply border-border;
-  }
-
-  /* Smooth theme transitions */
-  .theme-transitioning,
-  .theme-transitioning *,
-  .theme-transitioning *::before,
-  .theme-transitioning *::after {
-    transition: background-color 0.4s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
   }
 
   body {
