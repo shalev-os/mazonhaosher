@@ -1,3 +1,4 @@
+import { useState } from "react";
 import bigale from "@/assets/cookie-bigale.jpg";
 import kinder from "@/assets/cookie-kinder.jpg";
 import matcha from "@/assets/cookie-matcha.jpg";
@@ -7,53 +8,50 @@ import sprinkles from "@/assets/cookie-sprinkles.jpg";
 import cakeRound from "@/assets/cake-round.jpg";
 import cakeCollection from "@/assets/cake-collection.jpg";
 import dessertBox from "@/assets/dessert-box.jpg";
+import fruitDesserts from "@/assets/fruit-desserts.jpg";
+import fruitDessertsTray from "@/assets/fruit-desserts-tray.jpg";
 
-const cakesAndDesserts = [
-  { src: cakeRound, alt: "עוגה עגולה מעוצבת בעבודת יד", label: "עוגות מעוצבות", span: "sm:col-span-2" },
-  { src: cakeCollection, alt: "מבחר עוגות פס וקינוחים מעוצבים", label: "עוגות פס וקינוחים", span: "" },
-  { src: dessertBox, alt: "מארז קינוחים בעבודת יד", label: "מארזים מתוקים", span: "" },
-];
+const products = [
+  { src: cakeRound, alt: "עוגה עגולה מעוצבת בעבודת יד", label: "עוגה מעוצבת", category: "עוגות מעוצבות", featured: true },
+  { src: cakeCollection, alt: "מבחר עוגות פס וקינוחים מעוצבים", label: "עוגות פס וקינוחים", category: "עוגות פס" },
+  { src: dessertBox, alt: "מארז קינוחים בעבודת יד", label: "מארז מתוק", category: "מארזים" },
+  { src: fruitDesserts, alt: "קינוחי פירות בעבודת יד", label: "קינוחי פירות", category: "קינוחי פירות" },
+  { src: fruitDessertsTray, alt: "מגשי קינוחי פירות צבעוניים", label: "מגשי פירות", category: "קינוחי פירות" },
+  { src: kinder, alt: "עוגיית שוקולד וקינדר", label: "שוקולד וקינדר", category: "עוגיות" },
+  { src: matcha, alt: "עוגיית מאצ'ה", label: "מאצ'ה", category: "עוגיות" },
+  { src: redVelvet, alt: "עוגיית רד ולווט", label: "רד ולווט", category: "עוגיות" },
+  { src: tahini, alt: "עוגיית טחינה", label: "טחינה", category: "עוגיות" },
+  { src: sprinkles, alt: "עוגייה עם סוכריות", label: "סוכריות", category: "עוגיות" },
+  { src: bigale, alt: "עוגיית בוטיק מעוצבת", label: "עוגיית בוטיק", category: "עוגיות" },
+] as const;
 
-const cookies = [
-  { src: kinder, alt: "עוגיית שוקולד וקינדר", label: "שוקולד וקינדר" },
-  { src: matcha, alt: "עוגיית מאצ'ה", label: "מאצ'ה" },
-  { src: redVelvet, alt: "עוגיית רד ולווט", label: "רד ולווט" },
-  { src: tahini, alt: "עוגיית טחינה", label: "טחינה" },
-  { src: sprinkles, alt: "עוגייה עם סוכריות", label: "סוכריות" },
-  { src: bigale, alt: "עוגיית בוטיק מעוצבת", label: "עוגיית בוטיק" },
-];
-
-function ProductCard({ image, className = "" }: { image: { src: string; alt: string; label: string }; className?: string }) {
-  return <figure className={`group relative overflow-hidden rounded-2xl bg-[#eadbcb] ${className}`}><img src={image.src} alt={image.alt} loading="lazy" decoding="async" className="h-full w-full object-cover transition duration-500 group-hover:scale-105" /><figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent px-4 pb-4 pt-12 text-right text-sm font-semibold text-white">{image.label}</figcaption></figure>;
-}
+const filters = ["הכל", "עוגות מעוצבות", "עוגות פס", "קינוחי פירות", "מארזים", "עוגיות"] as const;
+type Filter = (typeof filters)[number];
 
 export default function VisualGallery() {
+  const [activeFilter, setActiveFilter] = useState<Filter>("הכל");
+  const visibleProducts = activeFilter === "הכל" ? products : products.filter((product) => product.category === activeFilter);
+
   return (
     <section className="bg-[#fffaf4] py-20 sm:py-28" aria-labelledby="gallery-title">
       <div className="container mx-auto px-5">
         <div className="mb-10 flex flex-col gap-6 text-right sm:mb-12 sm:flex-row sm:items-end sm:justify-between">
           <div><p className="mb-3 text-sm font-semibold tracking-wide text-primary">קטלוג מצולם</p><h2 id="gallery-title" className="text-4xl text-[#3a2218] sm:text-5xl">בוחרים קטגוריה, מתאהבים בפרטים.</h2></div>
-          <p className="max-w-sm leading-7 text-muted-foreground">הפרדנו את הקולקציות כדי שיהיה קל לראות בדיוק מה מתאים לאירוע שלכם.</p>
+          <p className="max-w-sm leading-7 text-muted-foreground">לחצו על קטגוריה כדי לראות רק את מה שמעניין אתכם. כל הזמנה מתואמת אישית בוואטסאפ.</p>
         </div>
-        <div className="space-y-12 sm:space-y-16">
-          <section aria-labelledby="cakes-title">
-            <div className="mb-5 flex flex-wrap items-baseline justify-between gap-2 border-b border-[#eadbcb] pb-3">
-              <h3 id="cakes-title" className="text-2xl font-semibold text-[#3a2218]">עוגות, קינוחים ומארזים</h3>
-              <p className="text-sm text-muted-foreground">הזמנה אישית בתיאום מראש</p>
-            </div>
-            <div className="grid auto-rows-[220px] grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-4">
-              {cakesAndDesserts.map((image) => <ProductCard key={image.alt} image={image} className={image.span} />)}
-            </div>
-          </section>
-          <section aria-labelledby="cookies-title">
-            <div className="mb-5 flex flex-wrap items-baseline justify-between gap-2 border-b border-[#eadbcb] pb-3">
-              <h3 id="cookies-title" className="text-2xl font-semibold text-[#3a2218]">עוגיות בוטיק</h3>
-              <p className="text-sm text-muted-foreground">כל אחת עם אופי משלה</p>
-            </div>
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-6 md:gap-4">
-              {cookies.map((image) => <ProductCard key={image.alt} image={image} className="aspect-square" />)}
-            </div>
-          </section>
+        <div className="mb-8 flex flex-wrap justify-end gap-2" role="group" aria-label="סינון הקטלוג">
+          {filters.map((filter) => (
+            <button key={filter} type="button" onClick={() => setActiveFilter(filter)} aria-pressed={activeFilter === filter} className={`rounded-full border px-4 py-2 text-sm font-semibold transition ${activeFilter === filter ? "border-[#6b4635] bg-[#6b4635] text-white shadow-sm" : "border-[#e6d4c3] bg-white text-[#6b4635] hover:border-[#6b4635] hover:bg-[#fff6ee]"}`}>{filter}</button>
+          ))}
+        </div>
+        <p className="sr-only" aria-live="polite">מוצגים {visibleProducts.length} פריטים בקטגוריית {activeFilter}</p>
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 md:grid-cols-4">
+          {visibleProducts.map((product) => (
+            <figure key={product.alt} className={`group relative aspect-square overflow-hidden rounded-2xl bg-[#eadbcb] ${product.featured && activeFilter === "הכל" ? "sm:col-span-2 sm:row-span-2 sm:aspect-auto" : ""}`}>
+              <img src={product.src} alt={product.alt} loading="lazy" decoding="async" className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent px-4 pb-4 pt-12 text-right text-sm font-semibold text-white">{product.label}</figcaption>
+            </figure>
+          ))}
         </div>
       </div>
     </section>
