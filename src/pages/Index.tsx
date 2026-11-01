@@ -2,8 +2,6 @@ import Hero from "@/components/Hero";
 import ProductGallery from "@/components/ProductGallery";
 import LuxuryFooter from "@/components/LuxuryFooter";
 import TopToolbar from "@/components/TopToolbar";
-import CookieCrumbs from "@/components/CookieCrumbs";
-import ScrollProgressBar from "@/components/ScrollProgressBar";
 import FloatingCTA from "@/components/FloatingCTA";
 
 import { t } from "@/content/siteText";
@@ -19,8 +17,6 @@ const Index = () => {
       >
         {t('ui.skipToContent')}
       </a>
-      <ScrollProgressBar />
-      <CookieCrumbs />
       <TopToolbar />
       <FloatingCTA />
       <main id="main-content" tabIndex={-1}>
