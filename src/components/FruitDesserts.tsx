@@ -1,5 +1,7 @@
 import { MessageCircle, Sparkles } from "lucide-react";
 import fruitDesserts from "@/assets/fruit-desserts.jpg";
+import fruitDessertsTray from "@/assets/fruit-desserts-tray.jpg";
+import fruitDessertsFlavors from "@/assets/fruit-desserts-flavors.jpg";
 
 const flavors = ["תות", "מנגו", "פסיפלורה", "תפוח", "פטל", "רימון", "פקאן"];
 
@@ -18,10 +20,11 @@ export default function FruitDesserts() {
           </div>
           <a href={`https://wa.me/972546791198?text=${message}`} target="_blank" rel="noopener noreferrer" className="mt-9 inline-flex min-h-12 items-center gap-2 rounded-full bg-[#f7c86e] px-6 font-semibold text-[#3a2218] transition hover:bg-[#ffe0a0] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f7c86e]"><MessageCircle size={19} aria-hidden="true" />לפרטים על קינוחי פירות</a>
         </div>
-        <figure className="order-1 overflow-hidden rounded-[2rem] border border-white/10 bg-[#513125] p-2 shadow-[0_22px_60px_rgba(0,0,0,.3)] lg:order-2">
-          <img src={fruitDesserts} alt="מבחר קינוחי פירות בעבודת יד באריזות זהב" loading="lazy" decoding="async" className="aspect-[4/3] w-full rounded-[1.5rem] object-cover" />
-          <figcaption className="px-4 py-4 text-right text-sm text-white/65">קינוחי פירות בעבודת יד · מזון האושר</figcaption>
-        </figure>
+        <div className="order-1 grid grid-cols-2 gap-3 lg:order-2">
+          <figure className="col-span-2 overflow-hidden rounded-[2rem] border border-white/10 bg-[#513125] p-2 shadow-[0_22px_60px_rgba(0,0,0,.3)]"><img src={fruitDesserts} alt="מבחר קינוחי פירות בעבודת יד באריזות זהב" loading="lazy" decoding="async" className="aspect-[4/3] w-full rounded-[1.5rem] object-cover" /><figcaption className="px-4 py-4 text-right text-sm text-white/65">קינוחי פירות בעבודת יד · מזון האושר</figcaption></figure>
+          <img src={fruitDessertsTray} alt="מגשי קינוחי פירות צבעוניים" loading="lazy" decoding="async" className="aspect-square w-full rounded-2xl object-cover shadow-[0_12px_30px_rgba(0,0,0,.18)]" />
+          <img src={fruitDessertsFlavors} alt="מבחר טעמי קינוחי פירות" loading="lazy" decoding="async" className="aspect-square w-full rounded-2xl object-cover shadow-[0_12px_30px_rgba(0,0,0,.18)]" />
+        </div>
       </div>
     </section>
   );
