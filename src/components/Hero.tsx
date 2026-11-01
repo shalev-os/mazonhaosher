@@ -15,9 +15,9 @@ export default function Hero() {
           <div className="mb-7 flex items-center gap-3 text-sm font-medium text-[#f5d6a1]"><span className="h-px w-9 bg-[#f5d6a1]/75" /><span>עוגיות בוטיק בעבודת יד</span></div>
           <img src={logo} alt="מזון האושר" className="mb-7 h-20 w-auto object-contain object-right sm:h-24" />
           <h1 className="max-w-lg font-display text-4xl leading-[1.18] sm:text-5xl lg:text-6xl">רגע קטן של<span className="block text-[#f7c86e]">אושר גדול.</span></h1>
-          <p className="mt-6 max-w-md text-base leading-8 text-white/85 sm:text-lg">עוגיות נדיבות, טריות ומלאות בטעם. בחרו את הטעם שמדבר אליכם ונשמח להכין לכם משהו מתוק.</p>
+          <p className="mt-6 max-w-md text-base leading-8 text-white/85 sm:text-lg">עוגיות נדיבות, קינוחי פירות ועוגות בעבודת יד — הכל בהזמנה מראש ובתיאום אישי.</p>
           <div className="mt-9 flex flex-wrap items-center gap-3">
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center gap-2 rounded-full bg-[#f7c86e] px-6 font-semibold text-[#3a2218] shadow-[0_12px_30px_rgba(0,0,0,.23)] transition hover:-translate-y-0.5 hover:bg-[#ffe0a0] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f7c86e]"><MessageCircle size={19} aria-hidden="true" />דברו איתנו בוואטסאפ</a>
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center gap-2 rounded-full bg-[#f7c86e] px-6 font-semibold text-[#3a2218] shadow-[0_12px_30px_rgba(0,0,0,.23)] transition hover:-translate-y-0.5 hover:bg-[#ffe0a0] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f7c86e]"><MessageCircle size={19} aria-hidden="true" />לתיאום הזמנה בוואטסאפ</a>
             <a href="#flavors" className="inline-flex min-h-12 items-center gap-2 rounded-full border border-white/35 px-6 font-medium text-white transition hover:border-white hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">לגלות את הטעמים<ArrowDown size={18} aria-hidden="true" /></a>
           </div>
         </div>
