@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import ProductGallery from "@/components/ProductGallery";
 import LuxuryFooter from "@/components/LuxuryFooter";
 import TopToolbar from "@/components/TopToolbar";
 import CookieCrumbs from "@/components/CookieCrumbs";
@@ -27,6 +28,7 @@ const Index = () => {
       <TopToolbar />
       <FloatingCTA />
       <Hero />
+      <ProductGallery />
       <LuxuryFooter />
     </div>
   );
