@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { X, RotateCcw } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { t } from "@/content/siteText";
 
 type FontSize = 0 | 1 | 2 | 3;
 type LineHeight = 0 | 1 | 2;
@@ -47,7 +47,6 @@ const AccessibilityWidget = () => {
   const [state, setState] = useState<A11yState>(DEFAULT_STATE);
   const panelRef = useRef<HTMLDivElement>(null);
   const guideRef = useRef<HTMLDivElement>(null);
-  const { isRTL, t } = useLanguage();
 
   const update = useCallback((key: keyof A11yState, value: unknown) => {
     setState(prev => ({ ...prev, [key]: value }));
@@ -142,7 +141,7 @@ const AccessibilityWidget = () => {
         />
       )}
 
-      <div ref={panelRef} className="fixed bottom-4 left-4 z-50" dir={isRTL ? "rtl" : "ltr"} role="region" aria-label={t('ui.a11yMenu')}>
+      <div ref={panelRef} className="fixed bottom-4 left-4 z-50" dir="rtl" role="region" aria-label={t('ui.a11yMenu')}>
         {/* Toggle Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}

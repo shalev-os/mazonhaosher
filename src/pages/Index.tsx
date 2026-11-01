@@ -3,19 +3,15 @@ import ProductGallery from "@/components/ProductGallery";
 import LuxuryFooter from "@/components/LuxuryFooter";
 import TopToolbar from "@/components/TopToolbar";
 import CookieCrumbs from "@/components/CookieCrumbs";
-import CinematicPreloader from "@/components/CinematicPreloader";
 import ScrollProgressBar from "@/components/ScrollProgressBar";
-import SectionDivider from "@/components/SectionDivider";
 import FloatingCTA from "@/components/FloatingCTA";
 
-import { useLanguage } from "@/contexts/LanguageContext";
+import { t } from "@/content/siteText";
 
 const Index = () => {
-  const { t } = useLanguage();
 
   return (
     <div className="min-h-screen bg-background texture-paper relative">
-      <CinematicPreloader />
       {/* Skip to content */}
       <a
         href="#main-content"
@@ -27,8 +23,10 @@ const Index = () => {
       <CookieCrumbs />
       <TopToolbar />
       <FloatingCTA />
-      <Hero />
-      <ProductGallery />
+      <main id="main-content" tabIndex={-1}>
+        <Hero />
+        <ProductGallery />
+      </main>
       <LuxuryFooter />
     </div>
   );
