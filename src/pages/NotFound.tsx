@@ -6,7 +6,6 @@ import { Home, ArrowRight, Cookie } from "lucide-react";
 import LuxuryFooter from "@/components/LuxuryFooter";
 import TopToolbar from "@/components/TopToolbar";
 import CookieCrumbs from "@/components/CookieCrumbs";
-import BackToTop from "@/components/BackToTop";
 import ScrollProgressBar from "@/components/ScrollProgressBar";
 import FloatingCTA from "@/components/FloatingCTA";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -34,7 +33,6 @@ const NotFound = () => {
       <ScrollProgressBar />
       <CookieCrumbs />
       <TopToolbar />
-      <BackToTop />
       <FloatingCTA />
 
       <main

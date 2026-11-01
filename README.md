@@ -1,4 +1,4 @@
-# מזון האושר
+# Mazon HaOsher
 
 The public website for [mazonhaosher.co.il](https://mazonhaosher.co.il), maintained in [shalev-os/mazonhaosher](https://github.com/shalev-os/mazonhaosher).
 
