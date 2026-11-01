@@ -8,21 +8,26 @@ import TopToolbar from "@/components/TopToolbar";
 import CookieCrumbs from "@/components/CookieCrumbs";
 import ScrollProgressBar from "@/components/ScrollProgressBar";
 import FloatingCTA from "@/components/FloatingCTA";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { t } from "@/content/siteText";
 
 const NotFound = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { t, isRTL } = useLanguage();
 
   useEffect(() => {
+    const previousTitle = document.title;
     document.title = t('notFound.metaTitle');
     const meta = document.querySelector('meta[name="description"]');
+    const previousDescription = meta?.getAttribute('content');
     if (meta) meta.setAttribute("content", t('notFound.metaDescription'));
+    return () => {
+      document.title = previousTitle;
+      if (meta && previousDescription !== null && previousDescription !== undefined) meta.setAttribute('content', previousDescription);
+    };
   }, [t]);
 
   return (
-    <div className="min-h-screen bg-background texture-paper relative" dir={isRTL ? 'rtl' : 'ltr'}>
+    <div className="min-h-screen bg-background texture-paper relative" dir="rtl">
       {/* Skip to content */}
       <a
         href="#main-content"

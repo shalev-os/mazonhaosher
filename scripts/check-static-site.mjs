@@ -22,6 +22,14 @@ for (const path of ['supabase', 'src/integrations/supabase', 'src/lib/mcp']) {
   if (filesIn(join(root, path)).length) failures.push(`Remove obsolete integration files: ${path}`);
 }
 if (existsSync(join(root, '.env'))) failures.push('A static site must not require a tracked .env file.');
+for (const path of ['src/contexts/LanguageContext.tsx', 'src/components/LanguageToggle.tsx']) {
+  if (existsSync(join(root, path))) failures.push(`Remove obsolete language selection: ${path}`);
+}
+
+const html = readFileSync(join(root, 'index.html'), 'utf8');
+if (!/<html\b[^>]*\blang=["']he["'][^>]*\bdir=["']rtl["']/i.test(html)) {
+  failures.push('The document must declare Hebrew content and right-to-left direction.');
+}
 
 const files = [...filesIn(join(root, 'src')), ...filesIn(join(root, 'public')), join(root, 'index.html'), join(root, 'vite.config.ts')];
 for (const path of files) {
@@ -31,6 +39,12 @@ for (const path of files) {
     failures.push(`Provider reference remains: ${path.slice(root.length + 1)}`);
   }
   if (/['"]\/(?:admin|auth)(?:[/'"])/i.test(text)) failures.push(`Private route remains: ${path.slice(root.length + 1)}`);
+  if (/LanguageContext|LanguageProvider|LanguageToggle|useLanguage|setLanguage|Select language|[?&]lang=|\bhreflang\s*=/i.test(text)) {
+    failures.push(`Legacy language selection remains: ${path.slice(root.length + 1)}`);
+  }
+  if (/(?:localStorage|sessionStorage)\s*\.\s*(?:getItem|setItem)\s*\(\s*["'](?:language|lang|locale|site-lang)["']/i.test(text)) {
+    failures.push(`Language preference storage remains: ${path.slice(root.length + 1)}`);
+  }
   if (!/\.[jt]sx?$/.test(path)) continue;
   for (const match of text.matchAll(/(?:from\s*|import\s*\(\s*|import\s*)['"]([^'"]+)['"]/g)) {
     const specifier = match[1].split('?')[0];
@@ -47,5 +61,5 @@ if (failures.length) {
   console.error(failures.join('\n'));
   process.exitCode = 1;
 } else {
-  console.log('Static site checks passed: no provider SDKs, private routes, or unresolved local imports.');
+  console.log('Static site checks passed: Hebrew-only content setup, no language selector, provider SDKs, private routes, or unresolved local imports.');
 }

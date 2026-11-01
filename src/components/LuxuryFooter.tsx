@@ -1,9 +1,8 @@
 import { forwardRef } from "react";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { t } from "@/content/siteText";
 import logo from "@/assets/logo.png";
 
 const LuxuryFooter = forwardRef<HTMLElement>((_, ref) => {
-  const { t } = useLanguage();
 
   return (
     <footer ref={ref} role="contentinfo" aria-label={t('ui.brandName')} className="relative py-16 overflow-hidden">
@@ -17,7 +16,7 @@ const LuxuryFooter = forwardRef<HTMLElement>((_, ref) => {
           {/* Logo */}
           <img
             src={logo}
-            alt={`${t('ui.brandName')} - Logo`}
+            alt={`לוגו ${t('ui.brandName')}`}
             className="h-20 w-auto"
             loading="lazy"
           />
