@@ -4,6 +4,7 @@ import LuxuryFooter from "@/components/LuxuryFooter";
 import TopToolbar from "@/components/TopToolbar";
 import FloatingCTA from "@/components/FloatingCTA";
 import FruitDesserts from "@/components/FruitDesserts";
+import VisualGallery from "@/components/VisualGallery";
 
 import { t } from "@/content/siteText";
 
@@ -24,6 +25,7 @@ const Index = () => {
         <Hero />
         <ProductGallery />
         <FruitDesserts />
+        <VisualGallery />
       </main>
       <LuxuryFooter />
     </div>
