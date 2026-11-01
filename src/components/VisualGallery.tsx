@@ -4,14 +4,20 @@ import matcha from "@/assets/cookie-matcha.jpg";
 import redVelvet from "@/assets/cookie-red-velvet.jpg";
 import tahini from "@/assets/cookie-tahini-new.jpg";
 import sprinkles from "@/assets/cookie-sprinkles.jpg";
+import cakeRound from "@/assets/cake-round.jpg";
+import cakeCollection from "@/assets/cake-collection.jpg";
+import dessertBox from "@/assets/dessert-box.jpg";
 
 const images = [
-  { src: bigale, alt: "עוגיית בוטיק מעוצבת", span: "md:col-span-2 md:row-span-2" },
+  { src: cakeRound, alt: "עוגה עגולה מעוצבת בעבודת יד", span: "md:col-span-2 md:row-span-2" },
+  { src: cakeCollection, alt: "מבחר עוגות וקינוחים מעוצבים", span: "md:row-span-2" },
   { src: kinder, alt: "עוגיית שוקולד וקינדר", span: "" },
+  { src: dessertBox, alt: "מארז קינוחים בעבודת יד", span: "" },
   { src: matcha, alt: "עוגיית מאצ'ה", span: "" },
   { src: redVelvet, alt: "עוגיית רד ולווט", span: "" },
   { src: tahini, alt: "עוגיית טחינה", span: "" },
   { src: sprinkles, alt: "עוגייה עם סוכריות", span: "md:col-span-2" },
+  { src: bigale, alt: "עוגיית בוטיק מעוצבת", span: "" },
 ];
 
 export default function VisualGallery() {
