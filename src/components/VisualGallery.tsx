@@ -39,11 +39,12 @@ export default function VisualGallery() {
           <div><p className="mb-3 text-sm font-semibold tracking-wide text-primary">קטלוג מצולם</p><h2 id="gallery-title" className="text-4xl text-[#3a2218] sm:text-5xl">בוחרים קטגוריה, מתאהבים בפרטים.</h2></div>
           <p className="max-w-sm leading-7 text-muted-foreground">לחצו על קטגוריה כדי לראות רק את מה שמעניין אתכם. כל הזמנה מתואמת אישית בוואטסאפ.</p>
         </div>
-        <div className="mb-8 flex flex-wrap justify-end gap-2" aria-label="סינון הקטלוג">
+        <div className="mb-8 flex flex-wrap justify-end gap-2" role="group" aria-label="סינון הקטלוג">
           {filters.map((filter) => (
             <button key={filter} type="button" onClick={() => setActiveFilter(filter)} aria-pressed={activeFilter === filter} className={`rounded-full border px-4 py-2 text-sm font-semibold transition ${activeFilter === filter ? "border-[#6b4635] bg-[#6b4635] text-white shadow-sm" : "border-[#e6d4c3] bg-white text-[#6b4635] hover:border-[#6b4635] hover:bg-[#fff6ee]"}`}>{filter}</button>
           ))}
         </div>
+        <p className="sr-only" aria-live="polite">מוצגים {visibleProducts.length} פריטים בקטגוריית {activeFilter}</p>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 md:grid-cols-4">
           {visibleProducts.map((product) => (
             <figure key={product.alt} className={`group relative aspect-square overflow-hidden rounded-2xl bg-[#eadbcb] ${product.featured && activeFilter === "הכל" ? "sm:col-span-2 sm:row-span-2 sm:aspect-auto" : ""}`}>
