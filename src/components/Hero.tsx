@@ -523,16 +523,10 @@ const Hero = () => {
 
             {/* Animated gradient subtitle */}
             <p
-              className="text-base md:text-lg mb-6 font-light"
+              className="text-base md:text-lg mb-6 font-medium mx-auto w-fit max-w-full rounded-2xl bg-black/70 px-5 py-3 text-white shadow-lg"
               style={{
                 opacity: 0,
                 animation: revealStep >= 3 ? 'cinematic 0.8s cubic-bezier(0.16,1,0.3,1) forwards' : 'none',
-                background: 'linear-gradient(90deg, hsla(40,90%,70%,1), hsla(350,65%,70%,1), hsla(280,60%,70%,1), hsla(40,90%,70%,1))',
-                backgroundSize: '300% 100%',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-                ...(revealStep >= 3 ? { animationName: 'cinematic, gradientText', animationDuration: '0.8s, 6s', animationTimingFunction: 'cubic-bezier(0.16,1,0.3,1), ease-in-out', animationDelay: '0s, 0s', animationIterationCount: '1, infinite', animationFillMode: 'forwards, none' } : {}),
               }}
             >
               {t('ui.boutiqueSubtitle')}
