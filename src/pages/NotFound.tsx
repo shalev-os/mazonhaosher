@@ -1,9 +1,8 @@
-import { useLocation, useNavigate, Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
-import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
-import { Loader2, Home, ArrowRight, Cookie } from "lucide-react";
+import { Home, ArrowRight, Cookie } from "lucide-react";
 import LuxuryFooter from "@/components/LuxuryFooter";
 import TopToolbar from "@/components/TopToolbar";
 import CookieCrumbs from "@/components/CookieCrumbs";
@@ -16,51 +15,12 @@ const NotFound = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { t, isRTL } = useLanguage();
-  const [isCheckingAuth, setIsCheckingAuth] = useState(true);
 
   useEffect(() => {
     document.title = t('notFound.metaTitle');
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", t('notFound.metaDescription'));
-
-    const hash = window.location.hash;
-    const search = window.location.search;
-    const isOAuthCallback =
-      hash.includes("access_token") || hash.includes("error") ||
-      search.includes("code=") || search.includes("error=");
-
-    if (isOAuthCallback) {
-      const timeout = setTimeout(() => {
-        supabase.auth.getSession().then(({ data: { session } }) => {
-          if (session) navigate("/", { replace: true });
-          else setIsCheckingAuth(false);
-        });
-      }, 1000);
-
-      const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
-        if (event === "SIGNED_IN" && session) navigate("/", { replace: true });
-      });
-
-      return () => {
-        clearTimeout(timeout);
-        subscription.unsubscribe();
-      };
-    } else {
-      setIsCheckingAuth(false);
-      console.error("404 Error: User attempted to access non-existent route:", location.pathname);
-    }
-  }, [location.pathname, navigate, t]);
-
-  if (isCheckingAuth) {
-    return (
-      <div className="flex min-h-screen items-center justify-center bg-background" dir={isRTL ? 'rtl' : 'ltr'}>
-        <div className="text-center">
-          <Loader2 className="h-8 w-8 animate-spin mx-auto mb-4 text-primary" />
-          <p className="text-muted-foreground">{t('notFound.connecting')}</p>
-        </div>
-      </div>
-    );
-  }
+  }, [t]);
 
   return (
     <div className="min-h-screen bg-background texture-paper relative" dir={isRTL ? 'rtl' : 'ltr'}>

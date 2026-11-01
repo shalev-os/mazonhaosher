@@ -21,13 +21,8 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.reviews': 'ביקורות',
     'nav.faq': 'שאלות נפוצות',
     'nav.contact': 'צור קשר',
-    'nav.cart': 'עגלה',
-    'nav.profile': 'פרופיל',
-    'nav.login': 'התחברות',
-    'nav.logout': 'התנתקות',
-    'nav.orderHistory': 'היסטוריית הזמנות',
     'nav.editProfile': 'עריכת פרופיל',
-    
+
     // Hero
     'hero.title': 'מזון האושר',
     'hero.subtitle': 'עוגיות אמריקאיות ענקיות',
@@ -35,7 +30,7 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.cta': 'לתפריט העוגיות',
     'hero.madeWithLove': 'מיוצר באהבה',
     'hero.viewMenu': 'צפו בתפריט',
-    
+
     // Cookies Section
     'cookies.title': 'הקולקציה שלנו',
     'cookies.subtitle': 'מיוצר באהבה, במיוחד בשבילכם ✨',
@@ -57,7 +52,7 @@ const translations: Record<Language, Record<string, string>> = {
     'cookies.sortPrice': 'לפי מחיר',
     'cookies.noResults': 'לא נמצאו עוגיות',
     'cookies.clearFilters': 'נקה מסננים',
-    
+
     // Cookie names
     'cookie.lotus': 'לוטוס',
     'cookie.kinder': 'קינדר',
@@ -74,7 +69,7 @@ const translations: Record<Language, Record<string, string>> = {
     'cookie.oatmeal': 'שיבולת שועל',
     'cookie.saltedCaramel': 'קרמל מלוח',
     'cookie.tahini': 'טחינה',
-    
+
     // Cookie descriptions
     'cookie.lotusDesc': 'ביסקוויט לוטוס וממרח קרמל',
     'cookie.kinderDesc': 'שוקולד קינדר וכדורי שוקולד צבעוניים',
@@ -91,13 +86,13 @@ const translations: Record<Language, Record<string, string>> = {
     'cookie.oatmealDesc': 'שיבולת שועל, צימוקים וקינמון',
     'cookie.saltedCaramelDesc': 'קרמל ביתי וקריסטלי מלח ים',
     'cookie.tahiniDesc': 'טחינה גולמית, שומשום ודבש',
-    
+
     // Cookie of the Week
     'cotw.title': 'עוגיית השבוע',
     'cotw.discount': 'הנחה',
     'cotw.originalPrice': 'מחיר מקורי',
     'cotw.salePrice': 'מחיר מבצע',
-    
+
     // About
     'about.title': 'אודות מזון האושר',
     'about.ourStory': 'הסיפור שלנו',
@@ -109,7 +104,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.freshIngredientsDesc': 'אנחנו מקפידים רק על המרכיבים הטריים והמשובחים ביותר.',
     'about.dailyPrep': 'הכנה יומית',
     'about.dailyPrepDesc': 'המוצרים שלנו מוכנים טריים כל בוקר לטעם מושלם.',
-    
+
     // Reviews
     'reviews.title': 'מה הלקוחות אומרים',
     'reviews.subtitle': 'ביקורות מלקוחות מרוצים',
@@ -128,7 +123,7 @@ const translations: Record<Language, Record<string, string>> = {
     'reviews.thankYou': 'תודה על הביקורת! 🍪',
     'reviews.reviewAdded': 'הביקורת שלך נוספה בהצלחה',
     'reviews.reviewsCount': 'ביקורות',
-    
+
     // FAQ
     'faq.title': 'שאלות נפוצות',
     'faq.subtitle': 'כאן תמצאו תשובות לשאלות הנפוצות ביותר. לא מצאתם מה שחיפשתם? צרו איתנו קשר!',
@@ -144,71 +139,23 @@ const translations: Record<Language, Record<string, string>> = {
     'faq.eventsAnswer': 'בהחלט! אנחנו מציעים חבילות מיוחדות לאירועים, ימי הולדת, חתונות ובת/בר מצווה. צרו איתנו קשר לקבלת הצעת מחיר מותאמת אישית.',
     'faq.contact': 'איך יוצרים איתכם קשר?',
     'faq.contactAnswer': 'אפשר ליצור קשר דרך הוואטסאפ בכפתור הצף למטה, דרך הטופס באתר, או בטלפון 054-6791198. אנחנו זמינים בימים א׳-ה׳ בין השעות 9:00-21:00.',
-    
+
     // Contact
     'contact.title': 'צרו קשר',
     'contact.address': 'שדרות קדש 39, אשקלון',
     'contact.phone': '054-679-1198',
     'contact.hours': 'אספקה עד 3 ימי עסקים',
-    
-    // Cart
-    'cart.title': 'העגלה שלך',
-    'cart.empty': 'העגלה ריקה',
-    'cart.total': 'סה"כ',
-    'cart.checkout': 'לתשלום',
-    'cart.remove': 'הסר',
-    'cart.quantity': 'כמות',
-    'cart.subtotal': 'סכום ביניים',
-    'cart.shipping': 'משלוח',
-    'cart.free': 'חינם',
-    
-    // Checkout
-    'checkout.title': 'פרטי הזמנה',
-    'checkout.name': 'שם מלא',
-    'checkout.phone': 'טלפון',
-    'checkout.address': 'כתובת',
-    'checkout.city': 'עיר',
-    'checkout.notes': 'הערות להזמנה',
-    'checkout.submit': 'שלח הזמנה',
-    'checkout.success': 'ההזמנה נשלחה בהצלחה!',
-    
-    // Auth (basic - extended auth keys are at the end of Hebrew section)
-    'auth.login': 'התחברות',
-    'auth.signup': 'הרשמה',
-    'auth.email': 'אימייל',
-    'auth.password': 'סיסמה',
-    'auth.loginButton': 'התחבר',
-    'auth.signupButton': 'הירשם',
-    'auth.orContinueWith': 'או המשך עם',
-    'auth.phoneLogin': 'התחברות עם טלפון',
-    'auth.verifyCode': 'אמת קוד',
 
-    // Profile
-    'profile.title': 'הפרופיל שלי',
-    'profile.edit': 'ערוך פרופיל',
-    'profile.save': 'שמור',
-    'profile.cancel': 'ביטול',
-    'profile.deleteAccount': 'מחיקת חשבון',
-    'profile.changePassword': 'שנה סיסמה',
-    
-    // Newsletter
-    'newsletter.title': 'לא לפספס מבצעים!',
-    'newsletter.subtitle': 'הירשמו לניוזלטר וקבלו עדכונים על מבצעים מיוחדים',
-    'newsletter.emailPlaceholder': 'כתובת המייל שלך',
-    'newsletter.phonePlaceholder': 'מספר טלפון (אופציונלי)',
-    'newsletter.button': 'להירשם לעדכונים ✨',
-    'newsletter.submitting': 'שולח...',
-    'newsletter.success': 'נרשמת בהצלחה! 🎉',
-    'newsletter.successDesc': 'תקבל/י עדכונים על מבצעים וחדשות',
-    'newsletter.thankYou': 'תודה שנרשמת! ✨',
-    'newsletter.thankYouDesc': 'נעדכן אותך על מבצעים מיוחדים, מוצרים חדשים והפתעות מתוקות',
-    'newsletter.noSpam': 'אנחנו מבטיחים לא לשלוח ספאם. רק טוב טעים. ✨',
-    
+
+
+
+
+
     // Footer
     'footer.rights': 'כל הזכויות שמורות',
     'footer.privacy': 'מדיניות פרטיות',
     'footer.terms': 'תנאי שימוש',
-    
+
     // General
     'general.loading': 'טוען...',
     'general.error': 'שגיאה',
@@ -221,7 +168,7 @@ const translations: Record<Language, Record<string, string>> = {
     'general.edit': 'ערוך',
     'general.save': 'שמור',
     'general.cancel': 'ביטול',
-    
+
     // Gift Package
     'gift.title': 'חבילות מתנה',
     'gift.subtitle': 'בנו חבילת מתנה מושלמת עם העוגיות האהובות עליכם',
@@ -251,133 +198,17 @@ const translations: Record<Language, Record<string, string>> = {
     'gift.selectMore': 'נא לבחור {count} עוגיות נוספות',
     'gift.addedToCart': 'החבילה נוספה לעגלה! 🎁',
     'gift.cookies': 'עוגיות',
-    
+
     // Cookie of the Week
     'cotw.badge': 'עוגיית השבוע',
     'cotw.add': 'הוספה',
-    
-    // Cart Modal
-    'cartModal.title': 'העגלה שלי',
-    'cartModal.completing': 'השלמת הזמנה',
-    'cartModal.empty': 'העגלה ריקה',
-    'cartModal.addCookies': 'הוסיפו עוגיות טעימות!',
-    'cartModal.cookies': 'עוגיות',
-    'cartModal.saved': 'חסכת',
-    'cartModal.total': 'סה״כ:',
-    'cartModal.continue': 'המשך להזמנה',
-    'cartModal.maxItems': 'מקסימום 6 יחידות לפריט',
-    'cartModal.orderNumber': 'מספר הזמנה',
-    
-    // Checkout Form
-    'checkoutForm.back': 'חזרה לעגלה',
-    'checkoutForm.loginRequired': 'נדרשת התחברות',
-    'checkoutForm.loginRequiredDesc': 'כדי להשלים את ההזמנה, יש להתחבר או להירשם. הפרטים שלך יישמרו להזמנות הבאות!',
-    'checkoutForm.loginSignup': 'התחברות / הרשמה',
-    'checkoutForm.connectedAs': 'מחובר כ:',
-    'checkoutForm.orderDetails': 'פרטי הזמנה',
-    'checkoutForm.fullName': 'שם מלא',
-    'checkoutForm.namePlaceholder': 'ישראל ישראלי',
-    'checkoutForm.email': 'מייל',
-    'checkoutForm.phone': 'טלפון',
-    'checkoutForm.city': 'עיר',
-    'checkoutForm.cityPlaceholder': 'תל אביב',
-    'checkoutForm.address': 'כתובת',
-    'checkoutForm.addressPlaceholder': 'רחוב הרצל 1',
-    'checkoutForm.notes': 'הערות למשלוח (אופציונלי, עד 500 תווים)',
-    'checkoutForm.notesPlaceholder': 'קומה, דירה, הוראות מיוחדות...',
-    'checkoutForm.totalPayment': 'סה״כ לתשלום:',
-    'checkoutForm.cashPayment': '💵 תשלום במזומן בעת המשלוח',
-    'checkoutForm.orderCash': 'להזמין במזומן',
-    'checkoutForm.sending': 'שולח...',
-    'checkoutForm.confirmationSent': 'נשלח אישור למייל ולוואטסאפ',
-    'checkoutForm.tooManyOrders': 'יותר מדי הזמנות. נסו שוב מאוחר יותר.',
-    'checkoutForm.orderSuccess': 'ההזמנה נשלחה בהצלחה! נשלח מייל ווואטסאפ',
-    'checkoutForm.orderError': 'שגיאה בשליחת ההזמנה, נסו שוב',
-    
-    // Order History
-    'orderHistory.title': 'היסטוריית הזמנות',
-    'orderHistory.myOrders': 'ההזמנות שלי',
-    'orderHistory.subtitle': 'צפייה והזמנה חוזרת של הזמנות קודמות',
-    'orderHistory.loginPrompt': 'התחברו כדי לראות את ההזמנות הקודמות',
-    'orderHistory.login': 'התחברות',
-    'orderHistory.loading': 'טוען הזמנות...',
-    'orderHistory.noOrders': 'אין הזמנות קודמות',
-    'orderHistory.ordersWillAppear': 'ההזמנות שלכם יופיעו כאן',
-    'orderHistory.reorder': 'הזמנה חוזרת',
-    'orderHistory.itemsAdded': 'הפריטים נוספו לעגלה!',
-    'orderHistory.pending': 'ממתין לאישור',
-    'orderHistory.confirmed': 'אושר',
-    'orderHistory.preparing': 'בהכנה',
-    'orderHistory.delivering': 'במשלוח',
-    'orderHistory.completed': 'הושלם',
-    'orderHistory.cancelled': 'בוטל',
-    
-    // Edit Profile Modal
-    'editProfile.title': 'עריכת פרופיל',
-    'editProfile.clickToChange': 'לחץ להחלפת תמונה',
-    'editProfile.imageOnly': 'יש להעלות קובץ תמונה בלבד',
-    'editProfile.maxSize': 'גודל התמונה מקסימלי 2MB',
-    'editProfile.uploadSuccess': 'התמונה הועלתה בהצלחה!',
-    'editProfile.uploadError': 'שגיאה בהעלאת התמונה',
-    'editProfile.emailLabel': 'אימייל',
-    'editProfile.fullNameLabel': 'שם מלא',
-    'editProfile.namePlaceholder': 'השם שלך',
-    'editProfile.phoneLabel': 'טלפון *',
-    'editProfile.phonePlaceholder': '054-1234567',
-    'editProfile.cityLabel': 'עיר',
-    'editProfile.cityPlaceholder': 'שם העיר',
-    'editProfile.addressLabel': 'כתובת',
-    'editProfile.addressPlaceholder': 'רחוב ומספר בית',
-    'editProfile.notesLabel': 'הערות למשלוח',
-    'editProfile.notesPlaceholder': 'קוד בניין, קומה, הוראות מיוחדות...',
-    'editProfile.save': 'שמור שינויים',
-    'editProfile.saving': 'שומר...',
-    'editProfile.success': 'הפרופיל עודכן בהצלחה! ✨',
-    'editProfile.deleteAccount': 'מחיקת חשבון',
-    
-    // Change Password Modal
-    'changePassword.title': 'שינוי סיסמה',
-    'changePassword.currentPassword': 'סיסמה נוכחית',
-    'changePassword.currentPlaceholder': 'הזן סיסמה נוכחית',
-    'changePassword.newPassword': 'סיסמה חדשה',
-    'changePassword.newPlaceholder': 'לפחות 8 תווים',
-    'changePassword.confirmPassword': 'אימות סיסמה',
-    'changePassword.confirmPlaceholder': 'הזן שוב את הסיסמה',
-    'changePassword.requirements': 'אות גדולה + מספר + 8 תווים לפחות',
-    'changePassword.change': 'שנה סיסמה',
-    'changePassword.changing': 'מעדכן...',
-    'changePassword.success': 'הסיסמה שונתה בהצלחה!',
-    'changePassword.successDesc': 'השתמש בסיסמה החדשה בהתחברות הבאה',
-    'changePassword.wrongCurrent': 'סיסמה נוכחית שגויה',
-    'changePassword.noUser': 'לא נמצא משתמש מחובר',
-    
-    // Delete Account Modal
-    'deleteAccount.title': 'מחיקת חשבון',
-    'deleteAccount.typeConfirm': 'כדי להמשיך, הקלד',
-    'deleteAccount.deleteWord': 'מחיקה',
-    'deleteAccount.typePlaceholder': 'הקלד מחיקה',
-    'deleteAccount.warning': 'פעולה זו תמחק לצמיתות את החשבון שלך וכל המידע הקשור אליו, כולל:',
-    'deleteAccount.profileData': 'פרטי הפרופיל',
-    'deleteAccount.orderHistory': 'היסטוריית הזמנות',
-    'deleteAccount.noRecover': 'לא ניתן לשחזר את המידע לאחר המחיקה!',
-    'deleteAccount.sendCode': 'נשלח קוד אימות למייל',
-    'deleteAccount.continue': 'המשך',
-    'deleteAccount.continueDelete': 'המשך למחיקה',
-    'deleteAccount.sendingCode': 'שולח קוד...',
-    'deleteAccount.enterCode': 'הזן את קוד האימות שנשלח למייל שלך:',
-    'deleteAccount.enter6Digits': 'יש להזין 6 ספרות',
-    'deleteAccount.resendIn': 'שלח שוב בעוד {seconds} שניות',
-    'deleteAccount.resend': 'שלח קוד חדש',
-    'deleteAccount.back': 'חזור',
-    'deleteAccount.cancel': 'ביטול',
-    'deleteAccount.deleting': 'מוחק...',
-    'deleteAccount.deletePermanently': 'מחק לצמיתות',
-    'deleteAccount.deleted': 'החשבון נמחק',
-    'deleteAccount.goodbye': 'להתראות, תמיד אפשר לחזור 🍪',
-    'deleteAccount.noEmail': 'לא נמצא אימייל משתמש',
-    'deleteAccount.codeSent': 'קוד נשלח! 📧',
-    'deleteAccount.checkEmail': 'בדוק את תיבת המייל שלך',
-    
+
+
+
+
+
+
+
     // Cookie Card
     'cookieCard.added': 'נוסף!',
     'cookieCard.add': 'הוסף',
@@ -386,7 +217,7 @@ const translations: Record<Language, Record<string, string>> = {
     'cookieCard.new': 'חדש',
     'cookieCard.maxItems': 'מקסימום 6 יחידות לפריט',
     'cookieCard.readMore': 'קרא עוד על',
-    
+
     // UI Labels
     'ui.infoBanner': 'באנר מידע',
     'ui.socialMedia': 'רשתות חברתיות',
@@ -445,75 +276,7 @@ const translations: Record<Language, Record<string, string>> = {
     'ui.a11yAlignRight': 'ימין',
     'ui.a11yAlignCenter': 'מרכז',
     'ui.a11yAlignLeft': 'שמאל',
-    // Auth Modal
-    'auth.loginTitle': 'התחברות',
-    'auth.registerTitle': 'הרשמה',
-    'auth.forgotTitle': 'שכחתי סיסמה',
-    'auth.otpTitle': 'אימות דו-שלבי',
-    'auth.smsLoginTitle': 'התחברות ב-SMS',
-    'auth.smsOtpTitle': 'אימות SMS',
-    'auth.smsLoginDesc': 'הזן את מספר הטלפון שלך ונשלח לך קוד אימות ב-SMS',
-    'auth.phoneLabel': 'מספר טלפון *',
-    'auth.sendCode': 'שלח קוד אימות',
-    'auth.sending': 'שולח...',
-    'auth.backToLogin': 'חזרה להתחברות רגילה',
-    'auth.codeSentTo': 'שלחנו קוד אימות בן 6 ספרות ל-',
-    'auth.verifying': 'מאמת...',
-    'auth.verify': 'אמת',
-    'auth.resendIn': 'שלח שוב בעוד {seconds} שניות',
-    'auth.resendCode': 'שלח קוד חדש',
-    'auth.back': 'חזרה',
-    'auth.rememberDevice': 'זכור את המכשיר הזה',
-    'auth.verifyAndContinue': 'אמת והמשך',
-    'auth.smsLogin': 'התחברות ב-SMS',
-    'auth.or': 'או',
-    'auth.fullNameLabel': 'שם מלא *',
-    'auth.fullNamePlaceholder': 'ישראל ישראלי',
-    'auth.phoneOptional': 'טלפון',
-    'auth.emailLabel': 'אימייל *',
-    'auth.passwordLabel': 'סיסמה *',
-    'auth.passwordPlaceholder': 'לפחות 6 תווים',
-    'auth.forgotPassword': 'שכחתי סיסמה',
-    'auth.loggingIn': 'מתחבר...',
-    'auth.registering': 'נרשם...',
-    'auth.sendingReset': 'שולח...',
-    'auth.loginBtn': 'התחברות',
-    'auth.registerBtn': 'הרשמה',
-    'auth.sendResetLink': 'שלח קישור לאיפוס',
-    'auth.backToLoginLink': 'חזרה להתחברות',
-    'auth.noAccount': 'אין לך חשבון?',
-    'auth.hasAccount': 'כבר יש לך חשבון?',
-    'auth.signupLink': 'הירשם',
-    'auth.loginLink': 'התחבר',
-    'auth.tooManyAttempts': 'יותר מדי ניסיונות שגויים. נסה שוב בעוד {minutes} דקות',
-    'auth.wrongCode': 'קוד אימות שגוי',
-    'auth.attemptsLeft': 'נותרו {count} ניסיונות',
-    'auth.enter6Digits': 'יש להזין 6 ספרות',
-    'auth.invalidPhone': 'מספר טלפון לא תקין',
-    'auth.phoneTooLong': 'מספר טלפון ארוך מדי',
-    'auth.israeliPhoneRequired': 'יש להזין מספר טלפון נייד ישראלי תקין',
-    'auth.invalidEmail': 'כתובת אימייל לא תקינה',
-    'auth.passwordMin': 'סיסמה חייבת להכיל לפחות 6 תווים',
-    'auth.nameMin': 'שם חייב להכיל לפחות 2 תווים',
-    'auth.nameTooLong': 'שם ארוך מדי',
-    'auth.codeSentEmail': 'קוד נשלח! 📧',
-    'auth.checkEmailInbox': 'בדוק את תיבת המייל שלך',
-    'auth.codeSentSms': 'קוד נשלח! 📱',
-    'auth.checkSms': 'בדוק את הודעות ה-SMS שלך',
-    'auth.resetSent': 'נשלח בהצלחה! 📧',
-    'auth.resetSentDesc': 'קישור לאיפוס סיסמה נשלח לאימייל שלך',
-    'auth.wrongCredentials': 'אימייל או סיסמה שגויים',
-    'auth.emailExists': 'כתובת האימייל כבר רשומה במערכת',
-    'auth.cancelledLogin': 'ההתחברות בוטלה',
-    'auth.popupClosed': 'החלון נסגר לפני השלמת ההתחברות',
-    'auth.networkError': 'שגיאת רשת, בדוק את החיבור לאינטרנט',
-    'auth.providerNotEnabled': 'ספק ההתחברות לא מוגדר כרגע',
-    'auth.unknownDevice': 'מכשיר לא ידוע',
-    'auth.error': 'שגיאה',
-    'auth.genericError': 'אירעה שגיאה, נסו שוב',
-    'auth.sendCodeError': 'אירעה שגיאה בשליחת הקוד',
-    'auth.sessionError': 'שגיאה בהתחברות',
-    
+
   },
   en: {
     // Header
@@ -523,13 +286,8 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.reviews': 'Reviews',
     'nav.faq': 'FAQ',
     'nav.contact': 'Contact',
-    'nav.cart': 'Cart',
-    'nav.profile': 'Profile',
-    'nav.login': 'Login',
-    'nav.logout': 'Logout',
-    'nav.orderHistory': 'Order History',
     'nav.editProfile': 'Edit Profile',
-    
+
     // Hero
     'hero.title': 'MazonHaosher',
     'hero.subtitle': 'Giant American Cookies',
@@ -537,7 +295,7 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.cta': 'View Our Cookies',
     'hero.madeWithLove': 'Made with Love',
     'hero.viewMenu': 'View Menu',
-    
+
     // Cookies Section
     'cookies.title': 'Our Collection',
     'cookies.subtitle': 'Made with love, especially for you ✨',
@@ -559,7 +317,7 @@ const translations: Record<Language, Record<string, string>> = {
     'cookies.sortPrice': 'By Price',
     'cookies.noResults': 'No cookies found',
     'cookies.clearFilters': 'Clear filters',
-    
+
     // Cookie names
     'cookie.lotus': 'Lotus',
     'cookie.kinder': 'Kinder',
@@ -576,7 +334,7 @@ const translations: Record<Language, Record<string, string>> = {
     'cookie.oatmeal': 'Oatmeal',
     'cookie.saltedCaramel': 'Salted Caramel',
     'cookie.tahini': 'Tahini',
-    
+
     // Cookie descriptions
     'cookie.lotusDesc': 'Lotus biscuit and caramel spread',
     'cookie.kinderDesc': 'Kinder chocolate with colorful chocolate balls',
@@ -593,13 +351,13 @@ const translations: Record<Language, Record<string, string>> = {
     'cookie.oatmealDesc': 'Oatmeal, raisins and cinnamon',
     'cookie.saltedCaramelDesc': 'Homemade caramel with sea salt crystals',
     'cookie.tahiniDesc': 'Raw tahini, sesame seeds and honey',
-    
+
     // Cookie of the Week
     'cotw.title': 'Cookie of the Week',
     'cotw.discount': 'OFF',
     'cotw.originalPrice': 'Original Price',
     'cotw.salePrice': 'Sale Price',
-    
+
     // About
     'about.title': 'About MazonHaosher',
     'about.ourStory': 'Our Story',
@@ -611,7 +369,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.freshIngredientsDesc': 'We use only the freshest and finest ingredients.',
     'about.dailyPrep': 'Daily Preparation',
     'about.dailyPrepDesc': 'Our products are freshly prepared every morning for perfect taste.',
-    
+
     // Reviews
     'reviews.title': 'What Our Customers Say',
     'reviews.subtitle': 'Reviews from happy customers',
@@ -630,7 +388,7 @@ const translations: Record<Language, Record<string, string>> = {
     'reviews.thankYou': 'Thanks for your review! 🍪',
     'reviews.reviewAdded': 'Your review has been added successfully',
     'reviews.reviewsCount': 'reviews',
-    
+
     // FAQ
     'faq.title': 'Frequently Asked Questions',
     'faq.subtitle': "Here you'll find answers to the most common questions. Didn't find what you're looking for? Contact us!",
@@ -646,138 +404,23 @@ const translations: Record<Language, Record<string, string>> = {
     'faq.eventsAnswer': 'Absolutely! We offer special packages for events, birthdays, weddings and bar/bat mitzvahs. Contact us for a personalized quote.',
     'faq.contact': 'How can I contact you?',
     'faq.contactAnswer': 'You can contact us via WhatsApp using the floating button below, through the website form, or by phone at 054-6791198. We are available Sunday-Thursday between 9:00-21:00.',
-    
+
     // Contact
     'contact.title': 'Contact Us',
     'contact.address': '39 Kadesh Blvd, Ashkelon',
     'contact.phone': '054-679-1198',
     'contact.hours': 'Delivery within 3 business days',
-    
-    // Cart
-    'cart.title': 'Your Cart',
-    'cart.empty': 'Your cart is empty',
-    'cart.total': 'Total',
-    'cart.checkout': 'Checkout',
-    'cart.remove': 'Remove',
-    'cart.quantity': 'Quantity',
-    'cart.subtotal': 'Subtotal',
-    'cart.shipping': 'Shipping',
-    'cart.free': 'Free',
-    
-    // Checkout
-    'checkout.title': 'Order Details',
-    'checkout.name': 'Full Name',
-    'checkout.phone': 'Phone',
-    'checkout.address': 'Address',
-    'checkout.city': 'City',
-    'checkout.notes': 'Order Notes',
-    'checkout.submit': 'Place Order',
-    'checkout.success': 'Order placed successfully!',
-    
-    // Auth
-    'auth.login': 'Login',
-    'auth.signup': 'Sign Up',
-    'auth.email': 'Email',
-    'auth.password': 'Password',
-    'auth.orContinueWith': 'Or continue with',
-    'auth.phoneLogin': 'Login with Phone',
-    'auth.verifyCode': 'Verify Code',
-    'auth.loginTitle': 'Login',
-    'auth.registerTitle': 'Sign Up',
-    'auth.forgotTitle': 'Forgot Password',
-    'auth.otpTitle': 'Two-Factor Auth',
-    'auth.smsLoginTitle': 'SMS Login',
-    'auth.smsOtpTitle': 'SMS Verification',
-    'auth.smsLoginDesc': 'Enter your phone number and we will send you a verification code via SMS',
-    'auth.phoneLabel': 'Phone Number *',
-    'auth.sendCode': 'Send Code',
-    'auth.sending': 'Sending...',
-    'auth.backToLogin': 'Back to regular login',
-    'auth.codeSentTo': 'We sent a 6-digit verification code to',
-    'auth.verifying': 'Verifying...',
-    'auth.verify': 'Verify',
-    'auth.resendIn': 'Resend in {seconds} seconds',
-    'auth.resendCode': 'Send new code',
-    'auth.back': 'Back',
-    'auth.rememberDevice': 'Remember this device',
-    'auth.verifyAndContinue': 'Verify and continue',
-    'auth.smsLogin': 'SMS Login',
-    'auth.or': 'or',
-    'auth.fullNameLabel': 'Full Name *',
-    'auth.fullNamePlaceholder': 'John Doe',
-    'auth.phoneOptional': 'Phone',
-    'auth.emailLabel': 'Email *',
-    'auth.passwordLabel': 'Password *',
-    'auth.passwordPlaceholder': 'At least 6 characters',
-    'auth.forgotPassword': 'Forgot password?',
-    'auth.loggingIn': 'Logging in...',
-    'auth.registering': 'Signing up...',
-    'auth.sendingReset': 'Sending...',
-    'auth.loginBtn': 'Login',
-    'auth.registerBtn': 'Sign Up',
-    'auth.sendResetLink': 'Send reset link',
-    'auth.backToLoginLink': 'Back to login',
-    'auth.noAccount': "Don't have an account?",
-    'auth.hasAccount': 'Already have an account?',
-    'auth.signupLink': 'Sign up',
-    'auth.loginLink': 'Log in',
-    'auth.loginButton': 'Log In',
-    'auth.signupButton': 'Sign Up',
-    'auth.tooManyAttempts': 'Too many failed attempts. Try again in {minutes} minutes',
-    'auth.wrongCode': 'Invalid verification code',
-    'auth.attemptsLeft': '{count} attempts remaining',
-    'auth.enter6Digits': 'Please enter 6 digits',
-    'auth.invalidPhone': 'Invalid phone number',
-    'auth.phoneTooLong': 'Phone number too long',
-    'auth.israeliPhoneRequired': 'Please enter a valid Israeli mobile number',
-    'auth.invalidEmail': 'Invalid email address',
-    'auth.passwordMin': 'Password must be at least 6 characters',
-    'auth.nameMin': 'Name must be at least 2 characters',
-    'auth.nameTooLong': 'Name is too long',
-    'auth.codeSentEmail': 'Code sent! 📧',
-    'auth.checkEmailInbox': 'Check your email inbox',
-    'auth.codeSentSms': 'Code sent! 📱',
-    'auth.checkSms': 'Check your SMS messages',
-    'auth.resetSent': 'Sent successfully! 📧',
-    'auth.resetSentDesc': 'A password reset link was sent to your email',
-    'auth.wrongCredentials': 'Invalid email or password',
-    'auth.emailExists': 'This email is already registered',
-    'auth.cancelledLogin': 'Login was cancelled',
-    'auth.popupClosed': 'The window was closed before completing login',
-    'auth.networkError': 'Network error, check your internet connection',
-    'auth.providerNotEnabled': 'This login provider is not currently configured',
-    'auth.unknownDevice': 'Unknown device',
-    'auth.error': 'Error',
-    'auth.genericError': 'An error occurred, please try again',
-    'auth.sendCodeError': 'An error occurred while sending the code',
-    'auth.sessionError': 'Login error',
-    
-    // Profile
-    'profile.title': 'My Profile',
-    'profile.edit': 'Edit Profile',
-    'profile.save': 'Save',
-    'profile.cancel': 'Cancel',
-    'profile.deleteAccount': 'Delete Account',
-    'profile.changePassword': 'Change Password',
-    
-    // Newsletter
-    'newsletter.title': "Don't Miss Out!",
-    'newsletter.subtitle': 'Subscribe to our newsletter for special offers',
-    'newsletter.emailPlaceholder': 'Your email address',
-    'newsletter.phonePlaceholder': 'Phone number (optional)',
-    'newsletter.button': 'Subscribe for updates ✨',
-    'newsletter.submitting': 'Submitting...',
-    'newsletter.success': 'Subscribed successfully! 🎉',
-    'newsletter.successDesc': "You'll receive updates on deals and news",
-    'newsletter.thankYou': 'Thanks for subscribing! ✨',
-    'newsletter.thankYouDesc': "We'll update you on special deals, new products and sweet surprises",
-    'newsletter.noSpam': "We promise not to send spam. Only delicious updates. ✨",
-    
+
+
+
+
+
+
     // Footer
     'footer.rights': 'All Rights Reserved',
     'footer.privacy': 'Privacy Policy',
     'footer.terms': 'Terms of Service',
-    
+
     // General
     'general.loading': 'Loading...',
     'general.error': 'Error',
@@ -790,7 +433,7 @@ const translations: Record<Language, Record<string, string>> = {
     'general.edit': 'Edit',
     'general.save': 'Save',
     'general.cancel': 'Cancel',
-    
+
     // Gift Package
     'gift.title': 'Gift Packages',
     'gift.subtitle': 'Build the perfect gift package with your favorite cookies',
@@ -820,133 +463,17 @@ const translations: Record<Language, Record<string, string>> = {
     'gift.selectMore': 'Please select {count} more cookies',
     'gift.addedToCart': 'Package added to cart! 🎁',
     'gift.cookies': 'cookies',
-    
+
     // Cookie of the Week
     'cotw.badge': 'Cookie of the Week',
     'cotw.add': 'Add',
-    
-    // Cart Modal
-    'cartModal.title': 'My Cart',
-    'cartModal.completing': 'Complete Order',
-    'cartModal.empty': 'Cart is empty',
-    'cartModal.addCookies': 'Add some delicious cookies!',
-    'cartModal.cookies': 'cookies',
-    'cartModal.saved': 'You saved',
-    'cartModal.total': 'Total:',
-    'cartModal.continue': 'Continue to Order',
-    'cartModal.maxItems': 'Maximum 6 items per product',
-    'cartModal.orderNumber': 'Order number',
-    
-    // Checkout Form
-    'checkoutForm.back': 'Back to cart',
-    'checkoutForm.loginRequired': 'Login Required',
-    'checkoutForm.loginRequiredDesc': 'To complete your order, please login or sign up. Your details will be saved for future orders!',
-    'checkoutForm.loginSignup': 'Login / Sign Up',
-    'checkoutForm.connectedAs': 'Connected as:',
-    'checkoutForm.orderDetails': 'Order Details',
-    'checkoutForm.fullName': 'Full Name',
-    'checkoutForm.namePlaceholder': 'John Doe',
-    'checkoutForm.email': 'Email',
-    'checkoutForm.phone': 'Phone',
-    'checkoutForm.city': 'City',
-    'checkoutForm.cityPlaceholder': 'Tel Aviv',
-    'checkoutForm.address': 'Address',
-    'checkoutForm.addressPlaceholder': '1 Herzl St',
-    'checkoutForm.notes': 'Delivery notes (optional, up to 500 characters)',
-    'checkoutForm.notesPlaceholder': 'Floor, apartment, special instructions...',
-    'checkoutForm.totalPayment': 'Total to pay:',
-    'checkoutForm.cashPayment': '💵 Cash payment upon delivery',
-    'checkoutForm.orderCash': 'Order with Cash',
-    'checkoutForm.sending': 'Sending...',
-    'checkoutForm.confirmationSent': 'Confirmation sent via email and WhatsApp',
-    'checkoutForm.tooManyOrders': 'Too many orders. Try again later.',
-    'checkoutForm.orderSuccess': 'Order sent successfully! Email and WhatsApp sent',
-    'checkoutForm.orderError': 'Error sending order, please try again',
-    
-    // Order History
-    'orderHistory.title': 'Order History',
-    'orderHistory.myOrders': 'My Orders',
-    'orderHistory.subtitle': 'View and reorder previous orders',
-    'orderHistory.loginPrompt': 'Login to see your previous orders',
-    'orderHistory.login': 'Login',
-    'orderHistory.loading': 'Loading orders...',
-    'orderHistory.noOrders': 'No previous orders',
-    'orderHistory.ordersWillAppear': 'Your orders will appear here',
-    'orderHistory.reorder': 'Reorder',
-    'orderHistory.itemsAdded': 'Items added to cart!',
-    'orderHistory.pending': 'Pending',
-    'orderHistory.confirmed': 'Confirmed',
-    'orderHistory.preparing': 'Preparing',
-    'orderHistory.delivering': 'Delivering',
-    'orderHistory.completed': 'Completed',
-    'orderHistory.cancelled': 'Cancelled',
-    
-    // Edit Profile Modal
-    'editProfile.title': 'Edit Profile',
-    'editProfile.clickToChange': 'Click to change photo',
-    'editProfile.imageOnly': 'Please upload an image file only',
-    'editProfile.maxSize': 'Maximum image size is 2MB',
-    'editProfile.uploadSuccess': 'Image uploaded successfully!',
-    'editProfile.uploadError': 'Error uploading image',
-    'editProfile.emailLabel': 'Email',
-    'editProfile.fullNameLabel': 'Full Name',
-    'editProfile.namePlaceholder': 'Your name',
-    'editProfile.phoneLabel': 'Phone *',
-    'editProfile.phonePlaceholder': '054-1234567',
-    'editProfile.cityLabel': 'City',
-    'editProfile.cityPlaceholder': 'City name',
-    'editProfile.addressLabel': 'Address',
-    'editProfile.addressPlaceholder': 'Street and house number',
-    'editProfile.notesLabel': 'Delivery notes',
-    'editProfile.notesPlaceholder': 'Building code, floor, special instructions...',
-    'editProfile.save': 'Save Changes',
-    'editProfile.saving': 'Saving...',
-    'editProfile.success': 'Profile updated successfully! ✨',
-    'editProfile.deleteAccount': 'Delete Account',
-    
-    // Change Password Modal
-    'changePassword.title': 'Change Password',
-    'changePassword.currentPassword': 'Current Password',
-    'changePassword.currentPlaceholder': 'Enter current password',
-    'changePassword.newPassword': 'New Password',
-    'changePassword.newPlaceholder': 'At least 8 characters',
-    'changePassword.confirmPassword': 'Confirm Password',
-    'changePassword.confirmPlaceholder': 'Enter password again',
-    'changePassword.requirements': 'Uppercase letter + number + at least 8 characters',
-    'changePassword.change': 'Change Password',
-    'changePassword.changing': 'Updating...',
-    'changePassword.success': 'Password changed successfully!',
-    'changePassword.successDesc': 'Use your new password on next login',
-    'changePassword.wrongCurrent': 'Current password is incorrect',
-    'changePassword.noUser': 'No logged in user found',
-    
-    // Delete Account Modal
-    'deleteAccount.title': 'Delete Account',
-    'deleteAccount.typeConfirm': 'To continue, type',
-    'deleteAccount.deleteWord': 'delete',
-    'deleteAccount.typePlaceholder': 'Type delete',
-    'deleteAccount.warning': 'This action will permanently delete your account and all associated data, including:',
-    'deleteAccount.profileData': 'Profile data',
-    'deleteAccount.orderHistory': 'Order history',
-    'deleteAccount.noRecover': 'Data cannot be recovered after deletion!',
-    'deleteAccount.sendCode': 'A verification code will be sent to email',
-    'deleteAccount.continue': 'Continue',
-    'deleteAccount.continueDelete': 'Continue to delete',
-    'deleteAccount.sendingCode': 'Sending code...',
-    'deleteAccount.enterCode': 'Enter the verification code sent to your email:',
-    'deleteAccount.enter6Digits': 'Please enter 6 digits',
-    'deleteAccount.resendIn': 'Resend in {seconds} seconds',
-    'deleteAccount.resend': 'Send new code',
-    'deleteAccount.back': 'Back',
-    'deleteAccount.cancel': 'Cancel',
-    'deleteAccount.deleting': 'Deleting...',
-    'deleteAccount.deletePermanently': 'Delete permanently',
-    'deleteAccount.deleted': 'Account deleted',
-    'deleteAccount.goodbye': 'Goodbye, you can always come back 🍪',
-    'deleteAccount.noEmail': 'No user email found',
-    'deleteAccount.codeSent': 'Code sent! 📧',
-    'deleteAccount.checkEmail': 'Check your email inbox',
-    
+
+
+
+
+
+
+
     // Cookie Card
     'cookieCard.added': 'Added!',
     'cookieCard.add': 'Add',
@@ -955,7 +482,7 @@ const translations: Record<Language, Record<string, string>> = {
     'cookieCard.new': 'New',
     'cookieCard.maxItems': 'Maximum 6 items per product',
     'cookieCard.readMore': 'Read more about',
-    
+
     // UI Labels
     'ui.infoBanner': 'Info banner',
     'ui.socialMedia': 'Social media',
@@ -1023,13 +550,8 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.reviews': 'تقييمات',
     'nav.faq': 'أسئلة شائعة',
     'nav.contact': 'اتصل بنا',
-    'nav.cart': 'السلة',
-    'nav.profile': 'الملف الشخصي',
-    'nav.login': 'تسجيل الدخول',
-    'nav.logout': 'تسجيل الخروج',
-    'nav.orderHistory': 'سجل الطلبات',
     'nav.editProfile': 'تعديل الملف',
-    
+
     // Hero
     'hero.title': 'مزون السعادة',
     'hero.subtitle': 'كوكيز أمريكية عملاقة',
@@ -1037,7 +559,7 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.cta': 'عرض القائمة',
     'hero.madeWithLove': 'صُنع بحب',
     'hero.viewMenu': 'عرض القائمة',
-    
+
     // Cookies Section
     'cookies.title': 'مجموعتنا',
     'cookies.subtitle': 'مصنوع بحب، خصيصًا لكم ✨',
@@ -1059,7 +581,7 @@ const translations: Record<Language, Record<string, string>> = {
     'cookies.sortPrice': 'حسب السعر',
     'cookies.noResults': 'لم يتم العثور على كوكيز',
     'cookies.clearFilters': 'مسح الفلاتر',
-    
+
     // Cookie names
     'cookie.lotus': 'لوتس',
     'cookie.kinder': 'كيندر',
@@ -1076,7 +598,7 @@ const translations: Record<Language, Record<string, string>> = {
     'cookie.oatmeal': 'شوفان',
     'cookie.saltedCaramel': 'كراميل مملح',
     'cookie.tahini': 'طحينة',
-    
+
     // Cookie descriptions
     'cookie.lotusDesc': 'بسكويت لوتس وكراميل',
     'cookie.kinderDesc': 'شوكولاتة كيندر مع كرات شوكولاتة ملونة',
@@ -1093,7 +615,7 @@ const translations: Record<Language, Record<string, string>> = {
     'cookie.oatmealDesc': 'شوفان، زبيب وقرفة',
     'cookie.saltedCaramelDesc': 'كراميل منزلي مع بلورات ملح البحر',
     'cookie.tahiniDesc': 'طحينة خام، سمسم وعسل',
-    
+
     // Cookie of the Week
     'cotw.title': 'كوكيز الأسبوع',
     'cotw.discount': 'خصم',
@@ -1101,7 +623,7 @@ const translations: Record<Language, Record<string, string>> = {
     'cotw.salePrice': 'سعر العرض',
     'cotw.badge': 'كوكيز الأسبوع',
     'cotw.add': 'أضف',
-    
+
     // About
     'about.title': 'عن مزون السعادة',
     'about.ourStory': 'قصتنا',
@@ -1113,7 +635,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.freshIngredientsDesc': 'نستخدم فقط المكونات الأطزج والأجود.',
     'about.dailyPrep': 'تحضير يومي',
     'about.dailyPrepDesc': 'منتجاتنا تُحضر طازجة كل صباح لمذاق مثالي.',
-    
+
     // Reviews
     'reviews.title': 'ماذا يقول عملاؤنا',
     'reviews.subtitle': 'تقييمات من عملاء سعداء',
@@ -1132,7 +654,7 @@ const translations: Record<Language, Record<string, string>> = {
     'reviews.thankYou': 'شكرًا على تقييمك! 🍪',
     'reviews.reviewAdded': 'تمت إضافة تقييمك بنجاح',
     'reviews.reviewsCount': 'تقييمات',
-    
+
     // FAQ
     'faq.title': 'أسئلة شائعة',
     'faq.subtitle': 'هنا ستجد إجابات على الأسئلة الأكثر شيوعًا. لم تجد ما تبحث عنه؟ تواصل معنا!',
@@ -1148,85 +670,21 @@ const translations: Record<Language, Record<string, string>> = {
     'faq.eventsAnswer': 'بالتأكيد! نقدم باقات خاصة للمناسبات وأعياد الميلاد والأعراس. تواصل معنا للحصول على عرض سعر مخصص.',
     'faq.contact': 'كيف يمكنني التواصل معكم؟',
     'faq.contactAnswer': 'يمكنك التواصل معنا عبر واتساب من الزر العائم أدناه، أو عبر النموذج في الموقع، أو بالهاتف 054-6791198. نحن متاحون من الأحد إلى الخميس بين 9:00-21:00.',
-    
+
     // Contact
     'contact.title': 'اتصل بنا',
     'contact.address': 'شارع كاديش 39، أشكلون',
     'contact.phone': '054-679-1198',
     'contact.hours': 'التوصيل خلال 3 أيام عمل',
-    
-    // Cart
-    'cart.title': 'سلتك',
-    'cart.empty': 'السلة فارغة',
-    'cart.total': 'المجموع',
-    'cart.checkout': 'الدفع',
-    'cart.remove': 'إزالة',
-    'cart.quantity': 'الكمية',
-    'cart.subtotal': 'المجموع الفرعي',
-    'cart.shipping': 'الشحن',
-    'cart.free': 'مجاني',
-    
-    // Checkout
-    'checkout.title': 'تفاصيل الطلب',
-    'checkout.name': 'الاسم الكامل',
-    'checkout.phone': 'الهاتف',
-    'checkout.address': 'العنوان',
-    'checkout.city': 'المدينة',
-    'checkout.notes': 'ملاحظات الطلب',
-    'checkout.submit': 'إرسال الطلب',
-    'checkout.success': 'تم إرسال الطلب بنجاح!',
-    
-    // Auth
-    'auth.login': 'تسجيل الدخول',
-    'auth.signup': 'إنشاء حساب',
-    'auth.email': 'البريد الإلكتروني',
-    'auth.password': 'كلمة المرور',
-    'auth.loginButton': 'تسجيل الدخول',
-    'auth.signupButton': 'إنشاء حساب',
-    'auth.orContinueWith': 'أو المتابعة مع',
-    'auth.phoneLogin': 'الدخول بالهاتف',
-    'auth.verifyCode': 'تحقق من الرمز',
-    'auth.loginTitle': 'تسجيل الدخول',
-    'auth.registerTitle': 'إنشاء حساب',
-    'auth.forgotTitle': 'نسيت كلمة المرور',
-    'auth.or': 'أو',
-    'auth.fullNameLabel': 'الاسم الكامل *',
-    'auth.emailLabel': 'البريد الإلكتروني *',
-    'auth.passwordLabel': 'كلمة المرور *',
-    'auth.passwordPlaceholder': '6 أحرف على الأقل',
-    'auth.forgotPassword': 'نسيت كلمة المرور؟',
-    'auth.loggingIn': 'جاري الدخول...',
-    'auth.registering': 'جاري التسجيل...',
-    'auth.loginBtn': 'تسجيل الدخول',
-    'auth.registerBtn': 'إنشاء حساب',
-    'auth.noAccount': 'ليس لديك حساب؟',
-    'auth.hasAccount': 'لديك حساب بالفعل؟',
-    'auth.signupLink': 'سجل الآن',
-    'auth.loginLink': 'سجل الدخول',
-    'auth.error': 'خطأ',
-    'auth.genericError': 'حدث خطأ، حاول مرة أخرى',
-    
-    // Profile
-    'profile.title': 'ملفي الشخصي',
-    'profile.edit': 'تعديل الملف',
-    'profile.save': 'حفظ',
-    'profile.cancel': 'إلغاء',
-    'profile.deleteAccount': 'حذف الحساب',
-    'profile.changePassword': 'تغيير كلمة المرور',
-    
-    // Newsletter
-    'newsletter.title': 'لا تفوت العروض!',
-    'newsletter.subtitle': 'اشترك في نشرتنا الإخبارية للحصول على عروض خاصة',
-    'newsletter.emailPlaceholder': 'بريدك الإلكتروني',
-    'newsletter.phonePlaceholder': 'رقم الهاتف (اختياري)',
-    'newsletter.button': 'اشترك الآن ✨',
-    'newsletter.submitting': 'جاري الإرسال...',
-    'newsletter.success': 'تم الاشتراك بنجاح! 🎉',
-    'newsletter.noSpam': 'نعدك بعدم إرسال رسائل مزعجة. فقط أخبار لذيذة. ✨',
-    
+
+
+
+
+
+
     // Footer
     'footer.rights': 'جميع الحقوق محفوظة',
-    
+
     // General
     'general.loading': 'جاري التحميل...',
     'general.error': 'خطأ',
@@ -1239,7 +697,7 @@ const translations: Record<Language, Record<string, string>> = {
     'general.edit': 'تعديل',
     'general.save': 'حفظ',
     'general.cancel': 'إلغاء',
-    
+
     // Gift
     'gift.title': 'باقات الهدايا',
     'gift.subtitle': 'صمم باقة هدايا مثالية مع الكوكيز المفضلة لديك',
@@ -1249,13 +707,8 @@ const translations: Record<Language, Record<string, string>> = {
     'gift.large': 'باقة كبيرة',
     'gift.total': 'المجموع:',
     'gift.cookies': 'كوكيز',
-    
-    // Cart Modal
-    'cartModal.title': 'سلتي',
-    'cartModal.empty': 'السلة فارغة',
-    'cartModal.total': 'المجموع:',
-    'cartModal.continue': 'متابعة الطلب',
-    
+
+
     // Cookie Card
     'cookieCard.added': 'تمت الإضافة!',
     'cookieCard.add': 'أضف',
@@ -1263,26 +716,7 @@ const translations: Record<Language, Record<string, string>> = {
     'cookieCard.recommended': 'موصى به',
     'cookieCard.new': 'جديد',
 
-    // Order History
-    'orderHistory.title': 'سجل الطلبات',
-    'orderHistory.myOrders': 'طلباتي',
-    'orderHistory.noOrders': 'لا توجد طلبات سابقة',
-    'orderHistory.pending': 'قيد الانتظار',
-    'orderHistory.confirmed': 'مؤكد',
-    'orderHistory.preparing': 'قيد التحضير',
-    'orderHistory.delivering': 'قيد التوصيل',
-    'orderHistory.completed': 'مكتمل',
-    'orderHistory.cancelled': 'ملغي',
 
-    // Checkout Form
-    'checkoutForm.fullName': 'الاسم الكامل',
-    'checkoutForm.phone': 'الهاتف',
-    'checkoutForm.city': 'المدينة',
-    'checkoutForm.address': 'العنوان',
-    'checkoutForm.totalPayment': 'المجموع للدفع:',
-    'checkoutForm.cashPayment': '💵 دفع نقدي عند التوصيل',
-    'checkoutForm.orderCash': 'طلب بالنقد',
-    'checkoutForm.sending': 'جاري الإرسال...',
 
     // UI Labels
     'ui.infoBanner': 'شريط المعلومات',
@@ -1351,13 +785,8 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.reviews': 'Отзывы',
     'nav.faq': 'Вопросы',
     'nav.contact': 'Контакты',
-    'nav.cart': 'Корзина',
-    'nav.profile': 'Профиль',
-    'nav.login': 'Вход',
-    'nav.logout': 'Выход',
-    'nav.orderHistory': 'История заказов',
     'nav.editProfile': 'Редактировать профиль',
-    
+
     // Hero
     'hero.title': 'Мазон ХаОшер',
     'hero.subtitle': 'Гигантское американское печенье',
@@ -1365,7 +794,7 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.cta': 'Смотреть меню',
     'hero.madeWithLove': 'Сделано с любовью',
     'hero.viewMenu': 'Смотреть меню',
-    
+
     // Cookies Section
     'cookies.title': 'Наша коллекция',
     'cookies.subtitle': 'Сделано с любовью, специально для вас ✨',
@@ -1387,7 +816,7 @@ const translations: Record<Language, Record<string, string>> = {
     'cookies.sortPrice': 'По цене',
     'cookies.noResults': 'Печенье не найдено',
     'cookies.clearFilters': 'Сбросить фильтры',
-    
+
     // Cookie names
     'cookie.lotus': 'Лотус',
     'cookie.kinder': 'Киндер',
@@ -1404,7 +833,7 @@ const translations: Record<Language, Record<string, string>> = {
     'cookie.oatmeal': 'Овсяное',
     'cookie.saltedCaramel': 'Солёная карамель',
     'cookie.tahini': 'Тахини',
-    
+
     // Cookie descriptions
     'cookie.lotusDesc': 'Печенье Лотус и карамельная паста',
     'cookie.kinderDesc': 'Шоколад Киндер с цветными шоколадными шариками',
@@ -1421,7 +850,7 @@ const translations: Record<Language, Record<string, string>> = {
     'cookie.oatmealDesc': 'Овсянка, изюм и корица',
     'cookie.saltedCaramelDesc': 'Домашняя карамель с кристаллами морской соли',
     'cookie.tahiniDesc': 'Тахини, кунжут и мёд',
-    
+
     // Cookie of the Week
     'cotw.title': 'Печенье недели',
     'cotw.discount': 'Скидка',
@@ -1429,7 +858,7 @@ const translations: Record<Language, Record<string, string>> = {
     'cotw.salePrice': 'Цена со скидкой',
     'cotw.badge': 'Печенье недели',
     'cotw.add': 'Добавить',
-    
+
     // About
     'about.title': 'О Мазон ХаОшер',
     'about.ourStory': 'Наша история',
@@ -1441,7 +870,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.freshIngredientsDesc': 'Мы используем только самые свежие и лучшие ингредиенты.',
     'about.dailyPrep': 'Ежедневное приготовление',
     'about.dailyPrepDesc': 'Наша продукция готовится свежей каждое утро для идеального вкуса.',
-    
+
     // Reviews
     'reviews.title': 'Что говорят наши клиенты',
     'reviews.subtitle': 'Отзывы довольных клиентов',
@@ -1460,7 +889,7 @@ const translations: Record<Language, Record<string, string>> = {
     'reviews.thankYou': 'Спасибо за отзыв! 🍪',
     'reviews.reviewAdded': 'Ваш отзыв успешно добавлен',
     'reviews.reviewsCount': 'отзывов',
-    
+
     // FAQ
     'faq.title': 'Часто задаваемые вопросы',
     'faq.subtitle': 'Здесь вы найдёте ответы на самые частые вопросы. Не нашли ответ? Свяжитесь с нами!',
@@ -1476,83 +905,21 @@ const translations: Record<Language, Record<string, string>> = {
     'faq.eventsAnswer': 'Конечно! Мы предлагаем специальные наборы для мероприятий, дней рождения и свадеб. Свяжитесь с нами для индивидуального предложения.',
     'faq.contact': 'Как с вами связаться?',
     'faq.contactAnswer': 'Вы можете связаться с нами через WhatsApp, форму на сайте или по телефону 054-6791198. Мы доступны с воскресенья по четверг с 9:00 до 21:00.',
-    
+
     // Contact
     'contact.title': 'Контакты',
     'contact.address': 'бульвар Кадеш 39, Ашкелон',
     'contact.phone': '054-679-1198',
     'contact.hours': 'Доставка в течение 3 рабочих дней',
-    
-    // Cart
-    'cart.title': 'Ваша корзина',
-    'cart.empty': 'Корзина пуста',
-    'cart.total': 'Итого',
-    'cart.checkout': 'Оформить',
-    'cart.remove': 'Удалить',
-    'cart.quantity': 'Количество',
-    'cart.subtotal': 'Подытог',
-    'cart.shipping': 'Доставка',
-    'cart.free': 'Бесплатно',
-    
-    // Checkout
-    'checkout.title': 'Детали заказа',
-    'checkout.name': 'Полное имя',
-    'checkout.phone': 'Телефон',
-    'checkout.address': 'Адрес',
-    'checkout.city': 'Город',
-    'checkout.notes': 'Примечания к заказу',
-    'checkout.submit': 'Отправить заказ',
-    'checkout.success': 'Заказ успешно отправлен!',
-    
-    // Auth
-    'auth.login': 'Вход',
-    'auth.signup': 'Регистрация',
-    'auth.email': 'Эл. почта',
-    'auth.password': 'Пароль',
-    'auth.loginButton': 'Войти',
-    'auth.signupButton': 'Зарегистрироваться',
-    'auth.orContinueWith': 'Или продолжить с',
-    'auth.loginTitle': 'Вход',
-    'auth.registerTitle': 'Регистрация',
-    'auth.forgotTitle': 'Забыли пароль',
-    'auth.or': 'или',
-    'auth.fullNameLabel': 'Полное имя *',
-    'auth.emailLabel': 'Эл. почта *',
-    'auth.passwordLabel': 'Пароль *',
-    'auth.passwordPlaceholder': 'Минимум 6 символов',
-    'auth.forgotPassword': 'Забыли пароль?',
-    'auth.loggingIn': 'Вход...',
-    'auth.registering': 'Регистрация...',
-    'auth.loginBtn': 'Войти',
-    'auth.registerBtn': 'Зарегистрироваться',
-    'auth.noAccount': 'Нет аккаунта?',
-    'auth.hasAccount': 'Уже есть аккаунт?',
-    'auth.signupLink': 'Зарегистрироваться',
-    'auth.loginLink': 'Войти',
-    'auth.error': 'Ошибка',
-    'auth.genericError': 'Произошла ошибка, попробуйте снова',
-    
-    // Profile
-    'profile.title': 'Мой профиль',
-    'profile.edit': 'Редактировать',
-    'profile.save': 'Сохранить',
-    'profile.cancel': 'Отмена',
-    'profile.deleteAccount': 'Удалить аккаунт',
-    'profile.changePassword': 'Сменить пароль',
-    
-    // Newsletter
-    'newsletter.title': 'Не пропустите акции!',
-    'newsletter.subtitle': 'Подпишитесь на рассылку для специальных предложений',
-    'newsletter.emailPlaceholder': 'Ваш email',
-    'newsletter.phonePlaceholder': 'Телефон (необязательно)',
-    'newsletter.button': 'Подписаться ✨',
-    'newsletter.submitting': 'Отправка...',
-    'newsletter.success': 'Подписка оформлена! 🎉',
-    'newsletter.noSpam': 'Мы обещаем не отправлять спам. Только вкусные новости. ✨',
-    
+
+
+
+
+
+
     // Footer
     'footer.rights': 'Все права защищены',
-    
+
     // General
     'general.loading': 'Загрузка...',
     'general.error': 'Ошибка',
@@ -1565,7 +932,7 @@ const translations: Record<Language, Record<string, string>> = {
     'general.edit': 'Редактировать',
     'general.save': 'Сохранить',
     'general.cancel': 'Отмена',
-    
+
     // Gift
     'gift.title': 'Подарочные наборы',
     'gift.subtitle': 'Создайте идеальный подарочный набор с любимым печеньем',
@@ -1575,13 +942,8 @@ const translations: Record<Language, Record<string, string>> = {
     'gift.large': 'Большой набор',
     'gift.total': 'Итого:',
     'gift.cookies': 'печенья',
-    
-    // Cart Modal
-    'cartModal.title': 'Моя корзина',
-    'cartModal.empty': 'Корзина пуста',
-    'cartModal.total': 'Итого:',
-    'cartModal.continue': 'Продолжить заказ',
-    
+
+
     // Cookie Card
     'cookieCard.added': 'Добавлено!',
     'cookieCard.add': 'Добавить',
@@ -1589,26 +951,7 @@ const translations: Record<Language, Record<string, string>> = {
     'cookieCard.recommended': 'Рекомендуем',
     'cookieCard.new': 'Новинка',
 
-    // Order History
-    'orderHistory.title': 'История заказов',
-    'orderHistory.myOrders': 'Мои заказы',
-    'orderHistory.noOrders': 'Нет предыдущих заказов',
-    'orderHistory.pending': 'В ожидании',
-    'orderHistory.confirmed': 'Подтверждён',
-    'orderHistory.preparing': 'Готовится',
-    'orderHistory.delivering': 'Доставляется',
-    'orderHistory.completed': 'Завершён',
-    'orderHistory.cancelled': 'Отменён',
 
-    // Checkout Form
-    'checkoutForm.fullName': 'Полное имя',
-    'checkoutForm.phone': 'Телефон',
-    'checkoutForm.city': 'Город',
-    'checkoutForm.address': 'Адрес',
-    'checkoutForm.totalPayment': 'Итого к оплате:',
-    'checkoutForm.cashPayment': '💵 Оплата наличными при доставке',
-    'checkoutForm.orderCash': 'Заказать за наличные',
-    'checkoutForm.sending': 'Отправка...',
 
     // UI Labels
     'ui.infoBanner': 'Информационный баннер',
@@ -1677,13 +1020,8 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.reviews': 'Reseñas',
     'nav.faq': 'Preguntas frecuentes',
     'nav.contact': 'Contacto',
-    'nav.cart': 'Carrito',
-    'nav.profile': 'Perfil',
-    'nav.login': 'Iniciar sesión',
-    'nav.logout': 'Cerrar sesión',
-    'nav.orderHistory': 'Historial de pedidos',
     'nav.editProfile': 'Editar perfil',
-    
+
     // Hero
     'hero.title': 'Mazon HaOsher',
     'hero.subtitle': 'Galletas americanas gigantes',
@@ -1691,7 +1029,7 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.cta': 'Ver nuestras galletas',
     'hero.madeWithLove': 'Hecho con amor',
     'hero.viewMenu': 'Ver menú',
-    
+
     // Cookies Section
     'cookies.title': 'Nuestra colección',
     'cookies.subtitle': 'Hecho con amor, especialmente para ti ✨',
@@ -1713,7 +1051,7 @@ const translations: Record<Language, Record<string, string>> = {
     'cookies.sortPrice': 'Por precio',
     'cookies.noResults': 'No se encontraron galletas',
     'cookies.clearFilters': 'Limpiar filtros',
-    
+
     // Cookie names
     'cookie.lotus': 'Lotus',
     'cookie.kinder': 'Kinder',
@@ -1730,7 +1068,7 @@ const translations: Record<Language, Record<string, string>> = {
     'cookie.oatmeal': 'Avena',
     'cookie.saltedCaramel': 'Caramelo salado',
     'cookie.tahini': 'Tahini',
-    
+
     // Cookie descriptions
     'cookie.lotusDesc': 'Galleta Lotus y crema de caramelo',
     'cookie.kinderDesc': 'Chocolate Kinder con bolitas de chocolate de colores',
@@ -1747,7 +1085,7 @@ const translations: Record<Language, Record<string, string>> = {
     'cookie.oatmealDesc': 'Avena, pasas y canela',
     'cookie.saltedCaramelDesc': 'Caramelo casero con cristales de sal marina',
     'cookie.tahiniDesc': 'Tahini crudo, sésamo y miel',
-    
+
     // Cookie of the Week
     'cotw.title': 'Galleta de la semana',
     'cotw.discount': 'Descuento',
@@ -1755,7 +1093,7 @@ const translations: Record<Language, Record<string, string>> = {
     'cotw.salePrice': 'Precio de oferta',
     'cotw.badge': 'Galleta de la semana',
     'cotw.add': 'Agregar',
-    
+
     // About
     'about.title': 'Sobre Mazon HaOsher',
     'about.ourStory': 'Nuestra historia',
@@ -1767,7 +1105,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.freshIngredientsDesc': 'Usamos solo los ingredientes más frescos y finos.',
     'about.dailyPrep': 'Preparación diaria',
     'about.dailyPrepDesc': 'Nuestros productos se preparan frescos cada mañana para un sabor perfecto.',
-    
+
     // Reviews
     'reviews.title': 'Lo que dicen nuestros clientes',
     'reviews.subtitle': 'Reseñas de clientes satisfechos',
@@ -1786,7 +1124,7 @@ const translations: Record<Language, Record<string, string>> = {
     'reviews.thankYou': '¡Gracias por tu reseña! 🍪',
     'reviews.reviewAdded': 'Tu reseña se ha agregado exitosamente',
     'reviews.reviewsCount': 'reseñas',
-    
+
     // FAQ
     'faq.title': 'Preguntas frecuentes',
     'faq.subtitle': 'Aquí encontrarás respuestas a las preguntas más comunes. ¿No encontraste lo que buscabas? ¡Contáctanos!',
@@ -1802,83 +1140,21 @@ const translations: Record<Language, Record<string, string>> = {
     'faq.eventsAnswer': '¡Por supuesto! Ofrecemos paquetes especiales para eventos, cumpleaños y bodas. Contáctanos para una cotización personalizada.',
     'faq.contact': '¿Cómo puedo contactarlos?',
     'faq.contactAnswer': 'Puedes contactarnos por WhatsApp con el botón flotante, a través del formulario web o por teléfono al 054-6791198. Estamos disponibles de domingo a jueves de 9:00 a 21:00.',
-    
+
     // Contact
     'contact.title': 'Contacto',
     'contact.address': 'Blvd. Kadesh 39, Ashkelon',
     'contact.phone': '054-679-1198',
     'contact.hours': 'Entrega en 3 días hábiles',
-    
-    // Cart
-    'cart.title': 'Tu carrito',
-    'cart.empty': 'El carrito está vacío',
-    'cart.total': 'Total',
-    'cart.checkout': 'Pagar',
-    'cart.remove': 'Eliminar',
-    'cart.quantity': 'Cantidad',
-    'cart.subtotal': 'Subtotal',
-    'cart.shipping': 'Envío',
-    'cart.free': 'Gratis',
-    
-    // Checkout
-    'checkout.title': 'Detalles del pedido',
-    'checkout.name': 'Nombre completo',
-    'checkout.phone': 'Teléfono',
-    'checkout.address': 'Dirección',
-    'checkout.city': 'Ciudad',
-    'checkout.notes': 'Notas del pedido',
-    'checkout.submit': 'Realizar pedido',
-    'checkout.success': '¡Pedido realizado con éxito!',
-    
-    // Auth
-    'auth.login': 'Iniciar sesión',
-    'auth.signup': 'Registrarse',
-    'auth.email': 'Correo electrónico',
-    'auth.password': 'Contraseña',
-    'auth.loginButton': 'Iniciar sesión',
-    'auth.signupButton': 'Registrarse',
-    'auth.orContinueWith': 'O continuar con',
-    'auth.loginTitle': 'Iniciar sesión',
-    'auth.registerTitle': 'Registrarse',
-    'auth.forgotTitle': 'Olvidé mi contraseña',
-    'auth.or': 'o',
-    'auth.fullNameLabel': 'Nombre completo *',
-    'auth.emailLabel': 'Correo electrónico *',
-    'auth.passwordLabel': 'Contraseña *',
-    'auth.passwordPlaceholder': 'Mínimo 6 caracteres',
-    'auth.forgotPassword': '¿Olvidaste tu contraseña?',
-    'auth.loggingIn': 'Iniciando sesión...',
-    'auth.registering': 'Registrando...',
-    'auth.loginBtn': 'Iniciar sesión',
-    'auth.registerBtn': 'Registrarse',
-    'auth.noAccount': '¿No tienes cuenta?',
-    'auth.hasAccount': '¿Ya tienes cuenta?',
-    'auth.signupLink': 'Regístrate',
-    'auth.loginLink': 'Inicia sesión',
-    'auth.error': 'Error',
-    'auth.genericError': 'Ocurrió un error, intenta de nuevo',
-    
-    // Profile
-    'profile.title': 'Mi perfil',
-    'profile.edit': 'Editar perfil',
-    'profile.save': 'Guardar',
-    'profile.cancel': 'Cancelar',
-    'profile.deleteAccount': 'Eliminar cuenta',
-    'profile.changePassword': 'Cambiar contraseña',
-    
-    // Newsletter
-    'newsletter.title': '¡No te pierdas las ofertas!',
-    'newsletter.subtitle': 'Suscríbete a nuestro boletín para ofertas especiales',
-    'newsletter.emailPlaceholder': 'Tu correo electrónico',
-    'newsletter.phonePlaceholder': 'Teléfono (opcional)',
-    'newsletter.button': 'Suscribirse ✨',
-    'newsletter.submitting': 'Enviando...',
-    'newsletter.success': '¡Suscripción exitosa! 🎉',
-    'newsletter.noSpam': 'Prometemos no enviar spam. Solo noticias deliciosas. ✨',
-    
+
+
+
+
+
+
     // Footer
     'footer.rights': 'Todos los derechos reservados',
-    
+
     // General
     'general.loading': 'Cargando...',
     'general.error': 'Error',
@@ -1891,7 +1167,7 @@ const translations: Record<Language, Record<string, string>> = {
     'general.edit': 'Editar',
     'general.save': 'Guardar',
     'general.cancel': 'Cancelar',
-    
+
     // Gift
     'gift.title': 'Paquetes de regalo',
     'gift.subtitle': 'Crea el paquete de regalo perfecto con tus galletas favoritas',
@@ -1901,13 +1177,8 @@ const translations: Record<Language, Record<string, string>> = {
     'gift.large': 'Paquete grande',
     'gift.total': 'Total:',
     'gift.cookies': 'galletas',
-    
-    // Cart Modal
-    'cartModal.title': 'Mi carrito',
-    'cartModal.empty': 'El carrito está vacío',
-    'cartModal.total': 'Total:',
-    'cartModal.continue': 'Continuar con el pedido',
-    
+
+
     // Cookie Card
     'cookieCard.added': '¡Agregado!',
     'cookieCard.add': 'Agregar',
@@ -1915,26 +1186,7 @@ const translations: Record<Language, Record<string, string>> = {
     'cookieCard.recommended': 'Recomendado',
     'cookieCard.new': 'Nuevo',
 
-    // Order History
-    'orderHistory.title': 'Historial de pedidos',
-    'orderHistory.myOrders': 'Mis pedidos',
-    'orderHistory.noOrders': 'No hay pedidos anteriores',
-    'orderHistory.pending': 'Pendiente',
-    'orderHistory.confirmed': 'Confirmado',
-    'orderHistory.preparing': 'En preparación',
-    'orderHistory.delivering': 'En camino',
-    'orderHistory.completed': 'Completado',
-    'orderHistory.cancelled': 'Cancelado',
 
-    // Checkout Form
-    'checkoutForm.fullName': 'Nombre completo',
-    'checkoutForm.phone': 'Teléfono',
-    'checkoutForm.city': 'Ciudad',
-    'checkoutForm.address': 'Dirección',
-    'checkoutForm.totalPayment': 'Total a pagar:',
-    'checkoutForm.cashPayment': '💵 Pago en efectivo al momento de la entrega',
-    'checkoutForm.orderCash': 'Pedir en efectivo',
-    'checkoutForm.sending': 'Enviando...',
 
     // UI Labels
     'ui.infoBanner': 'Banner informativo',

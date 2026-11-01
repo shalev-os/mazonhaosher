@@ -2,7 +2,6 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
-import { initWebVitals } from "./lib/webVitals";
 
 createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -10,12 +9,11 @@ createRoot(document.getElementById("root")!).render(
   </React.StrictMode>
 );
 
-initWebVitals();
-
-// Unregister any previously registered service workers
-// (PWA SW interferes with Lovable preview iframes)
+// Retire workers from earlier releases so visitors receive current static files.
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.getRegistrations().then((regs) => {
     regs.forEach((r) => r.unregister());
+  }).catch(() => {
+    // Service workers may be unavailable in private or restricted browser modes.
   });
 }

@@ -1,68 +1,30 @@
-# mazonhaosher.co.il
+# מזון האושר
 
-## Overview
+The public website for [mazonhaosher.co.il](https://mazonhaosher.co.il), maintained in [shalev-os/mazonhaosher](https://github.com/shalev-os/mazonhaosher).
 
-A high-performance, mobile-first Progressive Web Application built for a real bakery business.
+This is a static React and TypeScript website built with Vite. It includes the existing brand design, five languages, theme preferences, accessible navigation, and direct links to the bakery's WhatsApp and social profiles.
 
-This is not a static marketing page — it is a fully engineered frontend system optimized for conversion, performance, and real-world user behavior.
+Orders and enquiries continue through WhatsApp. The website does not create accounts, store orders, collect newsletter subscriptions, or send analytics events. There is no administration panel, database, hosted backend, or required build-time environment variable.
 
-The application delivers a fast, immersive experience tailored for RTL languages while remaining fully adaptable to multilingual use cases.
+## Development
 
----
+Use Node.js 24 and npm:
 
-## Product Goals
+```sh
+npm ci
+npm run dev
+```
 
-- Convert visitors into customers (mobile-first UX)
-- Deliver instant load times under real network conditions
-- Provide an installable app-like experience (PWA)
-- Maintain accessibility and usability across all devices
-- Support RTL and multilingual expansion without architectural changes
+## Build
 
----
+```sh
+npm run build
+```
 
-## Core Capabilities
+Vite writes the static files to `dist/`. Serve that directory through IIS or another static web server with SPA fallback. IIS configuration is managed on the deployment server.
 
-### UX & Conversion Design
+## Content and contact links
 
-- Mobile-first layout
-- Floating CTA optimized for thumb reach
-- Scroll-driven engagement
-- Clear visual hierarchy
+Edit the public components in `src/components/`, translation strings in `src/contexts/LanguageContext.tsx`, and images in `src/assets/`. WhatsApp links are defined in `Hero.tsx` and `FloatingCTA.tsx`.
 
----
-
-### Performance Engineering
-
-- Vite-based fast builds
-- Lazy loading and route splitting
-- Runtime performance mode
-- Web Vitals tracking
-
----
-
-### Progressive Web App
-
-- Installable
-- Offline support
-- Auto updates
-
----
-
-### RTL & Localization
-
-- Native RTL support
-- Hebrew-first but multilingual-ready
-
----
-
-## Tech Stack
-
-React, TypeScript, Vite, Tailwind, shadcn/ui, Framer Motion, React Query, Supabase, PWA
-
----
-
-## Summary
-
-A conversion-focused frontend system designed to behave like a real product.
-
-Fast. Adaptive. Scalable.
+Language and theme preferences are stored only in the visitor's browser. Changes to the repository are reviewed and built before production deployment.

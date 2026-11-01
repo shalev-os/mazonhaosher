@@ -36,8 +36,6 @@ Disallow: /
 
 User-agent: *
 Allow: /
-Disallow: /api/
-Disallow: /supabase/
 
 Sitemap: https://mazonhaosher.co.il/sitemap.xml
 Host: https://mazonhaosher.co.il
