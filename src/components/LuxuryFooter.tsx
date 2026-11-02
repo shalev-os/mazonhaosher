@@ -11,7 +11,7 @@ const LuxuryFooter = forwardRef<HTMLElement>((_, ref) => {
       <div className="container mx-auto px-5">
         <div className="grid gap-10 text-right sm:grid-cols-[1fr_auto] sm:items-end">
           <div>
-            <img src={logo} alt={`לוגו ${t('ui.brandName')}`} className="h-16 w-auto brightness-0 invert" loading="lazy" />
+            <div className="inline-flex rounded-2xl bg-[#fff8f0] px-4 py-3 shadow-[0_10px_25px_rgba(0,0,0,.18)]"><img src={logo} alt={`לוגו ${t('ui.brandName')}`} className="h-14 w-auto" loading="lazy" /></div>
             <p className="mt-5 max-w-sm leading-7 text-white/65">עוגיות, קינוחים ועוגות בעבודת יד — בהזמנה מראש ובתיאום אישי.</p>
           </div>
           <div className="sm:text-left">
