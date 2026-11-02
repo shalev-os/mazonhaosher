@@ -5,6 +5,7 @@ import TopToolbar from "@/components/TopToolbar";
 import FloatingCTA from "@/components/FloatingCTA";
 import FruitDesserts from "@/components/FruitDesserts";
 import VisualGallery from "@/components/VisualGallery";
+import OrderJourney from "@/components/OrderJourney";
 
 import { t } from "@/content/siteText";
 
@@ -26,6 +27,7 @@ const Index = () => {
         <ProductGallery />
         <FruitDesserts />
         <VisualGallery />
+        <OrderJourney />
       </main>
       <LuxuryFooter />
     </div>
