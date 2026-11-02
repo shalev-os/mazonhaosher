@@ -33,7 +33,7 @@ export default function VisualGallery() {
   const visibleProducts = activeFilter === "הכל" ? products : products.filter((product) => product.category === activeFilter);
 
   return (
-    <section className="bg-[#fffaf4] py-20 sm:py-28" aria-labelledby="gallery-title">
+    <section id="gallery" className="scroll-mt-20 bg-[#fffaf4] py-20 sm:py-28" aria-labelledby="gallery-title">
       <div className="container mx-auto px-5">
         <div className="mb-10 flex flex-col gap-6 text-right sm:mb-12 sm:flex-row sm:items-end sm:justify-between">
           <div><p className="mb-3 text-sm font-semibold tracking-wide text-primary">קטלוג מצולם</p><h2 id="gallery-title" className="text-4xl text-[#3a2218] sm:text-5xl">בוחרים קטגוריה, מתאהבים בפרטים.</h2></div>

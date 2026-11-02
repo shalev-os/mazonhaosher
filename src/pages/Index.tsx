@@ -6,6 +6,7 @@ import FloatingCTA from "@/components/FloatingCTA";
 import FruitDesserts from "@/components/FruitDesserts";
 import VisualGallery from "@/components/VisualGallery";
 import OrderJourney from "@/components/OrderJourney";
+import CollectionIndex from "@/components/CollectionIndex";
 
 import { t } from "@/content/siteText";
 
@@ -24,6 +25,7 @@ const Index = () => {
       <FloatingCTA />
       <main id="main-content" tabIndex={-1}>
         <Hero />
+        <CollectionIndex />
         <ProductGallery />
         <FruitDesserts />
         <VisualGallery />
