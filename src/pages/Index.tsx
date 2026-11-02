@@ -7,6 +7,7 @@ import FruitDesserts from "@/components/FruitDesserts";
 import VisualGallery from "@/components/VisualGallery";
 import OrderJourney from "@/components/OrderJourney";
 import CollectionIndex from "@/components/CollectionIndex";
+import CraftStory from "@/components/CraftStory";
 
 import { t } from "@/content/siteText";
 
@@ -27,6 +28,7 @@ const Index = () => {
         <Hero />
         <CollectionIndex />
         <ProductGallery />
+        <CraftStory />
         <FruitDesserts />
         <VisualGallery />
         <OrderJourney />

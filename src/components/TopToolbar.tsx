@@ -1,4 +1,5 @@
-import { Cookie, MessageCircle } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
+import logo from '@/assets/logo.png';
 
 export default function TopToolbar() {
   return (
@@ -15,9 +16,7 @@ export default function TopToolbar() {
           aria-label="מזון האושר — לעמוד הבית"
           className="hidden min-h-11 min-w-0 items-center gap-3 rounded-xl px-1 text-primary transition-colors hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:flex sm:w-full sm:px-2 sm:text-foreground"
         >
-          <span className="hidden h-11 w-11 items-center justify-center rounded-2xl bg-primary/10 text-primary sm:flex">
-            <Cookie size={25} strokeWidth={1.7} aria-hidden="true" />
-          </span>
+          <span className="hidden h-11 w-16 items-center justify-center overflow-hidden rounded-2xl bg-[#fff6ee] sm:flex"><img src={logo} alt="" className="h-12 w-auto max-w-none" /></span>
           <span className="min-w-0 text-right">
             <span className="block truncate whitespace-nowrap font-display text-sm font-semibold leading-tight sm:text-xl">מזון האושר</span>
             <span className="mt-1 hidden text-xs text-muted-foreground sm:block">עוגיות בוטיק בעבודת יד</span>
