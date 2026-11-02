@@ -1,15 +1,8 @@
 import { useEffect, useState } from "react";
 import { ArrowUpLeft, MessageCircle, Plus } from "lucide-react";
 import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import chocolate from "@/assets/cookie-chocolate.jpg";
 import pistachio from "@/assets/cookie-pistachio.jpg";
-import lotus from "@/assets/cookie-lotus.jpg";
-import bigale from "@/assets/cookie-bigale.jpg";
 import kinder from "@/assets/cookie-kinder.jpg";
-import matcha from "@/assets/cookie-matcha.jpg";
-import redVelvet from "@/assets/cookie-red-velvet.jpg";
-import tahini from "@/assets/cookie-tahini-new.jpg";
-import sprinkles from "@/assets/cookie-sprinkles.jpg";
 import cakeRound from "@/assets/cake-round.jpg";
 import cakeCollection from "@/assets/cake-collection.jpg";
 import dessertBox from "@/assets/dessert-box.jpg";
@@ -20,15 +13,8 @@ const products = [
   { src: cakeCollection, alt: "מבחר עוגות פס וקינוחים מעוצבים", label: "עוגות פס וקינוחים", category: "עוגות פס" },
   { src: dessertBox, alt: "מארז קינוחים בעבודת יד", label: "מארז מתוק", category: "מארזים" },
   { src: fruitDesserts, alt: "קינוחי פירות בעבודת יד", label: "קינוחי פירות", category: "קינוחי פירות" },
-  { src: chocolate, alt: "עוגיית שוקולד", label: "שוקולד", category: "עוגיות" },
   { src: pistachio, alt: "עוגיית פיסטוק", label: "פיסטוק", category: "עוגיות" },
-  { src: lotus, alt: "עוגיית לוטוס", label: "לוטוס", category: "עוגיות" },
   { src: kinder, alt: "עוגיית שוקולד וקינדר", label: "שוקולד וקינדר", category: "עוגיות" },
-  { src: matcha, alt: "עוגיית מאצ'ה", label: "מאצ'ה", category: "עוגיות" },
-  { src: redVelvet, alt: "עוגיית רד ולווט", label: "רד ולווט", category: "עוגיות" },
-  { src: tahini, alt: "עוגיית טחינה", label: "טחינה", category: "עוגיות" },
-  { src: sprinkles, alt: "עוגייה עם סוכריות", label: "סוכריות", category: "עוגיות" },
-  { src: bigale, alt: "עוגיית בוטיק מעוצבת", label: "עוגיית בוטיק", category: "עוגיות" },
 ] as const;
 
 const filters = ["הכל", "עוגות מעוצבות", "עוגות פס", "קינוחי פירות", "מארזים", "עוגיות"] as const;
