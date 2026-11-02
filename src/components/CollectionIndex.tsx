@@ -1,26 +1,23 @@
-import { ArrowLeft } from "lucide-react";
-import cookie from "@/assets/cookie-chocolate.jpg";
+import { ArrowUpLeft } from "lucide-react";
+import cookie from "@/assets/cookie-pistachio.jpg";
 import fruit from "@/assets/fruit-desserts.jpg";
 import cake from "@/assets/cake-round.jpg";
 import box from "@/assets/dessert-box.jpg";
 
 const collections = [
-  { title: "עוגיות בוטיק", text: "הטעמים הקלאסיים של מזון האושר", image: cookie, href: "#flavors" },
-  { title: "קינוחי פירות", text: "צבעוניים, מעוצבים ומלאי שמחה", image: fruit, href: "#fruit-desserts" },
-  { title: "עוגות וקינוחים", text: "לרגעים שרוצים לחגוג", image: cake, href: "#gallery" },
-  { title: "מארזים מתוקים", text: "מחווה קטנה עם הרבה טעם", image: box, href: "#gallery" },
+  { title: "עוגיות בוטיק", text: "הביס שמתחיל את הכל", image: cookie, href: "#gallery/cookies", number: "01" },
+  { title: "עוגות וקינוחים", text: "משהו יפה לשים במרכז", image: cake, href: "#gallery/cakes", number: "02" },
+  { title: "קינוחי פירות", text: "מפתיעים כבר מהמבט הראשון", image: fruit, href: "#gallery/fruit", number: "03" },
+  { title: "מארזים מתוקים", text: "אושר שאפשר להעניק", image: box, href: "#gallery/boxes", number: "04" },
 ];
 
 export default function CollectionIndex() {
   return (
-    <section className="bg-[#fffaf4] py-16 sm:py-20" aria-labelledby="collection-index-title">
-      <div className="container mx-auto px-5">
-        <div className="mb-8 flex flex-col gap-3 text-right sm:mb-10 sm:flex-row sm:items-end sm:justify-between">
-          <div><p className="mb-2 text-sm font-semibold tracking-wide text-[#8b5b3d]">לבחירה שלכם</p><h2 id="collection-index-title" className="text-3xl text-[#3a2218] sm:text-4xl">לאיזה כיוון מתחשק לכם ללכת?</h2></div>
-          <p className="max-w-sm leading-7 text-muted-foreground">בחרו קולקציה וקפצו ישר למה שמעניין אתכם.</p>
-        </div>
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {collections.map((collection) => <a key={collection.title} href={collection.href} className="group relative min-h-[290px] overflow-hidden rounded-[1.5rem] bg-[#3a2218] text-white shadow-[0_14px_30px_rgba(72,39,24,.13)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#3a2218]"><img src={collection.image} alt="" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" /><span className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" /><span className="absolute inset-x-0 bottom-0 p-6 text-right"><span className="block text-sm text-white/75">{collection.text}</span><span className="mt-1 flex items-center justify-between gap-3 text-2xl font-semibold"><ArrowLeft size={20} aria-hidden="true" /><span>{collection.title}</span></span></span></a>)}
+    <section id="collections" className="atelier-collections" aria-labelledby="collection-index-title">
+      <div className="atelier-container">
+        <div className="atelier-section-heading"><div><p className="atelier-eyebrow">ארבע דרכים לשמח</p><h2 id="collection-index-title" className="atelier-heading">מה האושר שלכם?</h2></div><p>לרגע לעצמכם, לשולחן חגיגי או למישהו אהוב.<br />לכל חשק יש כאן מקום.</p></div>
+        <div className="atelier-collection-grid">
+          {collections.map((collection) => <a key={collection.title} href={collection.href} className="atelier-collection"><div className="atelier-collection-photo"><img src={collection.image} alt={collection.title} loading="lazy" decoding="async" /><span>{collection.number}</span></div><div className="atelier-collection-caption"><div><h3>{collection.title}</h3><p>{collection.text}</p></div><ArrowUpLeft size={22} strokeWidth={1.4} aria-hidden="true" /></div></a>)}
         </div>
       </div>
     </section>
