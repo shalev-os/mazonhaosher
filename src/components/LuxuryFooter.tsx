@@ -1,28 +1,39 @@
 import { forwardRef } from "react";
-import { MessageCircle } from "lucide-react";
-import { t } from "@/content/siteText";
+import { ArrowUpLeft, MessageCircle } from "lucide-react";
 import logo from "@/assets/logo.png";
 
-const LuxuryFooter = forwardRef<HTMLElement>((_, ref) => {
+const LuxuryFooter = forwardRef<HTMLElement>((_, ref) => (
+  <footer ref={ref} className="atelier-footer bg-[#302b27] text-[#faf6ee]" aria-label="מזון האושר — פרטי קשר וניווט">
+    <div className="atelier-container py-14 sm:py-20">
+      <div className="grid gap-10 border-b border-white/15 pb-12 md:grid-cols-[1.3fr_.7fr_1fr] md:gap-12">
+        <div>
+          <a href="#main-content" aria-label="מזון האושר — חזרה לראש העמוד" className="inline-flex rounded-xl bg-[#faf6ee] px-4 py-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d7dfc9]"><img src={logo} alt="לוגו מזון האושר" loading="lazy" decoding="async" className="h-20 w-40 object-contain" /></a>
+          <p className="mt-6 max-w-xs text-sm leading-7 text-[#faf6ee]/70">עוגיות, קינוחים ועוגות בעבודת יד. לרגע קטן לעצמכם, למתנה או לשולחן שרוצים לשמח.</p>
+        </div>
 
-  return (
-    <footer ref={ref} role="contentinfo" aria-label={t('ui.brandName')} className="relative overflow-hidden bg-[#271712] py-16 text-white sm:py-20">
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-l from-transparent via-[#e0ae70] to-transparent" aria-hidden="true" />
-      <div className="container mx-auto px-5">
-        <div className="grid gap-10 text-right sm:grid-cols-[1fr_auto] sm:items-end">
-          <div>
-            <div className="inline-flex rounded-2xl bg-[#fff8f0] px-4 py-3 shadow-[0_10px_25px_rgba(0,0,0,.18)]"><img src={logo} alt={`לוגו ${t('ui.brandName')}`} className="h-14 w-auto" loading="lazy" /></div>
-            <p className="mt-5 max-w-sm leading-7 text-white/65">עוגיות, קינוחים ועוגות בעבודת יד — בהזמנה מראש ובתיאום אישי.</p>
-          </div>
-          <div className="sm:text-left">
-            <a href="https://wa.me/972546791198" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 rounded-full border border-[#e0ae70]/45 px-5 text-sm font-semibold text-[#f7d594] transition hover:bg-[#e0ae70] hover:text-[#271712]"><MessageCircle size={18} aria-hidden="true" />לתיאום הזמנה בוואטסאפ</a>
-            <p className="mt-5 text-xs tracking-wide text-white/40">© {t('ui.brandName')} 2026</p>
-          </div>
+        <nav aria-label="ניווט בתחתית העמוד">
+          <h2 className="mb-5 text-sm font-semibold text-[#d7dfc9]">לגלות עוד</h2>
+          <ul className="space-y-1 text-sm text-[#faf6ee]/80">
+            <li><a href="#collections" className="inline-flex min-h-10 items-center hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d7dfc9]">הקולקציות שלנו</a></li>
+            <li><a href="#gallery" className="inline-flex min-h-10 items-center hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d7dfc9]">הקטלוג המצולם</a></li>
+            <li><a href="#ordering" className="inline-flex min-h-10 items-center hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d7dfc9]">איך מזמינים</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <h2 className="mb-5 text-sm font-semibold text-[#d7dfc9]">משהו מתוק מתחיל בשיחה</h2>
+          <p className="max-w-xs text-sm leading-7 text-[#faf6ee]/70">כל הזמנה בתיאום מראש. ספרו לנו מה מתחשק לכם, ונתאם יחד את הפרטים.</p>
+          <a href="https://wa.me/972546791198" target="_blank" rel="noopener noreferrer" aria-label="לתיאום הזמנה בוואטסאפ במספר 054-6791198 — נפתח בחלון חדש" className="mt-5 inline-flex min-h-12 items-center gap-3 border-b border-[#d7dfc9]/60 pb-1 text-base font-medium text-[#faf6ee] transition-colors hover:text-[#d7dfc9] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d7dfc9]"><MessageCircle size={20} aria-hidden="true" /><span dir="ltr">054-6791198</span><ArrowUpLeft size={18} aria-hidden="true" /></a>
         </div>
       </div>
-    </footer>
-  );
-});
+
+      <div className="flex flex-col gap-3 pt-6 text-xs text-[#faf6ee]/50 sm:flex-row sm:items-center sm:justify-between">
+        <p>© {new Date().getFullYear()} מזון האושר</p>
+        <p>עבודת יד. הזמנה מראש. רגע של אושר.</p>
+      </div>
+    </div>
+  </footer>
+));
 
 LuxuryFooter.displayName = "LuxuryFooter";
 

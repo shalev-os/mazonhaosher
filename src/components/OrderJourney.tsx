@@ -1,26 +1,27 @@
-import { ArrowLeft, MessageCircle, Sparkles } from "lucide-react";
+import { ArrowUpLeft, MessageCircle, Flower2 } from "lucide-react";
 
 const steps = [
-  { number: "01", title: "בוחרים כיוון", text: "עוגיות, קינוחי פירות, עוגה או מארז מתוק." },
-  { number: "02", title: "מדברים בוואטסאפ", text: "משתפים את הרעיון ומתאמים את הפרטים." },
-  { number: "03", title: "יוצרים רגע מתוק", text: "כל הזמנה נעשית בעבודת יד ובתיאום מראש." },
+  { number: "01", title: "מוצאים את החשק", text: "בוחרים מוצר או תמונה מהקטלוג." },
+  { number: "02", title: "מספרים לאלמוג", text: "שולחים הודעה בוואטסאפ עם הרעיון והפרטים." },
+  { number: "03", title: "מתאמים ביחד", text: "כל הזמנה מתואמת אישית ונעשית מראש." },
 ];
 
 export default function OrderJourney() {
   return (
-    <section className="bg-[#f0e5d8] py-20 sm:py-28" aria-labelledby="journey-title">
-      <div className="container mx-auto px-5">
-        <div className="grid gap-10 lg:grid-cols-[.8fr_1.2fr] lg:items-end lg:gap-16">
-          <div className="text-right">
-            <p className="mb-3 inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-[#8b5b3d]"><Sparkles size={16} aria-hidden="true" />פשוט, אישי, מתוק</p>
-            <h2 id="journey-title" className="max-w-md text-4xl text-[#3a2218] sm:text-5xl">כך הופכים רעיון קטן לאירוע טעים.</h2>
-            <a href="https://wa.me/972546791198" target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex min-h-12 items-center gap-2 rounded-full bg-[#3a2218] px-6 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#5b3728] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#3a2218]"><MessageCircle size={19} aria-hidden="true" />מתחילים בוואטסאפ<ArrowLeft size={18} aria-hidden="true" /></a>
-          </div>
-          <ol className="grid gap-3 sm:grid-cols-3 sm:gap-4">
-            {steps.map((step) => <li key={step.number} className="rounded-2xl border border-[#ddc9b5] bg-[#fffaf4] p-6 text-right shadow-[0_12px_28px_rgba(74,43,27,.06)]"><span className="font-display text-3xl text-[#c08a56]">{step.number}</span><h3 className="mt-7 text-2xl text-[#3a2218]">{step.title}</h3><p className="mt-3 leading-7 text-muted-foreground">{step.text}</p></li>)}
-          </ol>
+    <>
+      <section id="ordering" className="atelier-ordering" aria-labelledby="journey-title">
+        <div className="atelier-container">
+          <div className="atelier-order-top"><div><p className="atelier-eyebrow">השלב הבא הוא שיחה</p><h2 id="journey-title">בואו נכין<br /><em>משהו משמח.</em></h2></div><div className="atelier-order-invite"><Flower2 size={64} strokeWidth={.8} aria-hidden="true" /><p>יש רעיון לעוגה? מתלבטים בין טעמים?<br />אלמוג כאן כדי לתאם איתכם את הפרטים.</p><a href="https://wa.me/972546791198" target="_blank" rel="noopener noreferrer" className="atelier-button atelier-button-light"><MessageCircle size={19} aria-hidden="true" />מדברים עם אלמוג<ArrowUpLeft size={19} aria-hidden="true" /></a></div></div>
+          <ol className="atelier-order-steps">{steps.map(step => <li key={step.number}><span>{step.number}</span><div><h3>{step.title}</h3><p>{step.text}</p></div></li>)}</ol>
         </div>
-      </div>
-    </section>
+      </section>
+      <section className="atelier-faq" aria-labelledby="faq-title">
+        <div className="atelier-container atelier-faq-grid"><div><p className="atelier-eyebrow">לפני שמתחילים</p><h2 id="faq-title" className="atelier-heading">כמה דברים<br />שכדאי לדעת.</h2></div><div className="atelier-faq-items">
+          <details><summary>איך מזמינים?<span aria-hidden="true">+</span></summary><p>ההזמנות נעשות ישירות מול אלמוג בוואטסאפ, במספר <a href="https://wa.me/972546791198" target="_blank" rel="noopener noreferrer"><bdi>054-6791198</bdi></a>. אפשר לשלוח תמונה מהקטלוג ולתאם את הפרטים יחד.</p></details>
+          <details><summary>אפשר להזמין עוגה מעוצבת?<span aria-hidden="true">+</span></summary><p>כן. אפשר לפנות עם הכיוון או הרעיון שלכם לעוגה, ולקבל מאלמוג פרטים על האפשרויות בתיאום אישי.</p></details>
+          <details><summary>צריך להזמין מראש?<span aria-hidden="true">+</span></summary><p>כן, כל ההזמנות נעשות מראש ובתיאום אישי. לתיאום המועד והפרטים כתבו לאלמוג בוואטסאפ.</p></details>
+        </div></div>
+      </section>
+    </>
   );
 }

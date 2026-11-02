@@ -1,55 +1,65 @@
-import { MessageCircle } from 'lucide-react';
-import logo from '@/assets/logo.png';
+import { useEffect, useRef, useState } from "react";
+import { Menu, MessageCircle, X } from "lucide-react";
+import logo from "@/assets/logo.png";
+
+const navigation = [
+  { href: "#collections", label: "הקולקציות" },
+  { href: "#gallery", label: "הקטלוג" },
+  { href: "#ordering", label: "איך מזמינים" },
+];
 
 export default function TopToolbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+    const handleOutsideClick = (event: PointerEvent) => {
+      if (event.target instanceof Node && !headerRef.current?.contains(event.target)) {
+        setMenuOpen(false);
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    document.addEventListener("pointerdown", handleOutsideClick);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("pointerdown", handleOutsideClick);
+    };
+  }, [menuOpen]);
+
   return (
-    <nav
-      aria-label="ניווט ראשי"
-      className="fixed inset-x-0 top-3 z-50 px-3 sm:top-4 sm:px-6"
-    >
-      <div className="relative mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto_auto] items-center gap-1 rounded-2xl border border-primary/15 bg-card/95 p-2 shadow-[0_8px_32px_hsl(20_25%_12%_/_0.12)] backdrop-blur-xl sm:gap-2 sm:rounded-3xl sm:px-4 sm:py-3 lg:grid-cols-[1fr_auto_1fr]">
-        <span className="pointer-events-none absolute inset-0 flex items-center justify-center font-display text-base font-semibold text-primary sm:hidden">
-          מזון האושר
-        </span>
-        <a
-          href="/#main-content"
-          aria-label="מזון האושר — לעמוד הבית"
-          className="hidden min-h-11 min-w-0 items-center gap-3 rounded-xl px-1 text-primary transition-colors hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:flex sm:w-full sm:px-2 sm:text-foreground"
-        >
-          <span className="hidden h-11 w-16 items-center justify-center overflow-hidden rounded-2xl bg-[#fff6ee] sm:flex"><img src={logo} alt="" className="h-12 w-auto max-w-none" /></span>
-          <span className="min-w-0 text-right">
-            <span className="block truncate whitespace-nowrap font-display text-sm font-semibold leading-tight sm:text-xl">מזון האושר</span>
-            <span className="mt-1 hidden text-xs text-muted-foreground sm:block">עוגיות בוטיק בעבודת יד</span>
+    <header ref={headerRef} className="atelier-header sticky top-0 z-50 border-b border-[#302b27]/10 bg-[#faf6ee] text-[#302b27]">
+      <div className="atelier-container flex min-h-[82px] items-center justify-between gap-4">
+        <a href="#main-content" aria-label="מזון האושר — לעמוד הבית" onClick={() => setMenuOpen(false)} className="flex min-w-0 items-center gap-3 py-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#632c40]">
+          <img src={logo} alt="" className="h-14 w-24 shrink-0 object-contain sm:h-16 sm:w-28" />
+          <span className="hidden border-r border-[#302b27]/15 pr-3 text-right sm:block">
+            <span className="block text-lg font-semibold leading-tight">מזון האושר</span>
+            <span className="mt-1 block text-[11px] tracking-wide text-[#75665f]">עוגיות · קינוחים · עוגות</span>
           </span>
         </a>
 
-        <div className="flex shrink-0 items-center gap-1">
-          <a
-            href="/#main-content"
-            className="hidden min-h-11 items-center rounded-xl px-4 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary lg:inline-flex"
-          >
-            הבית
-          </a>
-          <a
-            href="/#flavors"
-            className="hidden min-h-11 items-center whitespace-nowrap rounded-xl px-2 text-xs font-medium text-foreground transition-colors hover:bg-primary/10 hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary sm:inline-flex sm:px-4 sm:text-sm"
-          >
-            הטעמים שלנו
-          </a>
-        </div>
+        <nav aria-label="ניווט ראשי" className="hidden items-center gap-7 text-sm font-medium md:flex">
+          {navigation.map((item) => <a key={item.href} href={item.href} className="border-b border-transparent py-3 transition-colors hover:border-[#632c40] hover:text-[#632c40] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#632c40]">{item.label}</a>)}
+        </nav>
 
-        <a
-          href="https://wa.me/972546791198"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="להזמנה בוואטסאפ — נפתח בחלון חדש"
-          className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 justify-self-end whitespace-nowrap rounded-xl bg-primary px-3 text-xs font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:rounded-2xl sm:px-5 sm:text-sm"
-        >
-          <MessageCircle size={18} aria-hidden="true" className="hidden sm:block" />
-          <span className="sm:hidden">הזמנה</span>
-          <span className="hidden sm:inline">להזמנה בוואטסאפ</span>
-        </a>
+        <div className="flex items-center gap-2">
+          <a href="https://wa.me/972546791198" target="_blank" rel="noopener noreferrer" aria-label="לתיאום הזמנה בוואטסאפ — נפתח בחלון חדש" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-[#632c40] px-4 text-xs font-semibold text-[#632c40] transition-colors hover:bg-[#632c40] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#632c40] sm:px-5 sm:text-sm">
+            <MessageCircle size={17} aria-hidden="true" />
+            <span className="sm:hidden">לתיאום הזמנה</span><span className="hidden sm:inline">נדבר על משהו מתוק</span>
+          </a>
+          <button ref={menuButtonRef} type="button" aria-label={menuOpen ? "סגירת התפריט" : "פתיחת התפריט"} aria-expanded={menuOpen} aria-controls="mobile-navigation" onClick={() => setMenuOpen((open) => !open)} className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-[#632c40] transition-colors hover:bg-[#632c40]/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#632c40] md:hidden">
+            {menuOpen ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
+          </button>
+        </div>
       </div>
-    </nav>
+      {menuOpen && <nav id="mobile-navigation" aria-label="ניווט במובייל" className="absolute inset-x-0 top-full border-b border-[#302b27]/10 bg-[#faf6ee] shadow-[0_18px_25px_rgba(48,43,39,.08)] md:hidden"><div className="atelier-container flex flex-col py-4">{navigation.map((item) => <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)} className="border-b border-[#302b27]/10 py-4 text-base font-medium text-[#302b27] last:border-0 hover:text-[#632c40] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#632c40]">{item.label}</a>)}</div></nav>}
+    </header>
   );
 }

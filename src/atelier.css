@@ -1,0 +1,175 @@
+/* The storefront's shared visual system. Components outside this page retain
+   their existing utility styles; catalogue dialogs use these tokens as well. */
+:root {
+  --background: 40 55% 96%;
+  --foreground: 27 10% 17%;
+  --primary: 339 39% 28%;
+  --ring: 339 39% 28%;
+  --muted-foreground: 24 8% 38%;
+  --atelier-cream: #faf6ee;
+  --atelier-wine: #632c40;
+  --atelier-ink: #302b27;
+  --atelier-sage: #d7dfc9;
+}
+html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+.atelier-site { color: var(--atelier-ink); background: var(--atelier-cream); overflow-x: clip; }
+.atelier-site h1, .atelier-site h2 { font-family: "Noto Serif Hebrew", Georgia, serif; font-weight: 500; letter-spacing: -.055em; }
+.atelier-site h3 { font-family: "Rubik", sans-serif; letter-spacing: -.025em; }
+.atelier-site em { font-style: normal; color: var(--atelier-wine); }
+.atelier-site a, .atelier-site button { -webkit-tap-highlight-color: transparent; }
+.atelier-site :is(a,button,summary):focus-visible { outline: 2px solid var(--atelier-wine); outline-offset: 5px; }
+.atelier-container { width: min(1320px, calc(100% - 96px)); margin-inline: auto; }
+.atelier-eyebrow { display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 500; line-height: 1.7; letter-spacing: .05em; margin-bottom: 22px; }
+.atelier-dot { width: 7px; height: 7px; background: var(--atelier-wine); border-radius: 50%; }
+.atelier-heading { font-size: clamp(36px, 4.4vw, 62px); line-height: 1.2; }
+.atelier-button { display: inline-flex; align-items: center; justify-content: center; gap: 22px; padding: 15px 25px; min-height: 50px; border-radius: 3px; background: var(--atelier-wine); color: white; font-size: 14px; font-weight: 500; transition: background .2s, transform .2s; }
+.atelier-button:hover { background: #422032; transform: translateY(-2px); }
+.atelier-text-link { display: inline-flex; gap: 16px; align-items: center; font-size: 14px; font-weight: 500; text-underline-offset: 6px; text-decoration: underline; text-decoration-thickness: 1px; }
+.atelier-text-link:hover { color: var(--atelier-wine); }
+.atelier-header { backdrop-filter: blur(18px); }
+.atelier-hero { padding-top: 42px; }
+.atelier-hero-grid { display: grid; grid-template-columns: 1fr 1.05fr; align-items: center; gap: 5.5%; padding-bottom: 74px; }
+.atelier-hero-copy { padding-block: 32px; }
+.atelier-hero h1 { font-size: clamp(66px, 7vw, 106px); line-height: 1.1; margin-block: 0 27px; }
+.atelier-hero-description { font-size: 17px; line-height: 1.95; color: #665e56; }
+.atelier-hero-actions { display: flex; flex-wrap: wrap; gap: 25px; align-items: center; margin-top: 30px; }
+.atelier-hero-footnote { border-top: 1px solid #ded4c8; padding-top: 22px; margin-top: 43px; display: flex; justify-content: space-between; max-width: 390px; font-size: 12px; color: #74665a; }
+.atelier-hero-footnote a { display: grid; place-items: center; height: 24px; width: 24px; }
+.atelier-hero-visual { position: relative; padding-bottom: 50px; padding-inline-start: 25px; }
+.atelier-hero-photo { width: 100%; height: clamp(440px, 36vw, 560px); object-fit: cover; border-radius: 46% 46% 2px 2px; }
+.atelier-seal { position: absolute; inset-inline-start: -24px; top: 21px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; background: var(--atelier-sage); width: 124px; height: 124px; border-radius: 50%; text-align: center; font-size: 13px; line-height: 1.6; transform: rotate(9deg); border: 5px solid var(--atelier-cream); }
+.atelier-hero-small { position: absolute; bottom: 0; inset-inline-end: -22px; width: 235px; padding: 7px; background: #fffdf8; box-shadow: 0 12px 35px #38232415; transform: rotate(-5deg); }
+.atelier-hero-small img { aspect-ratio: 1.5; object-fit: cover; width: 100%; }
+.atelier-hero-small span { display: flex; justify-content: space-between; align-items: center; padding: 10px 5px 4px; font-size: 11px; }
+.atelier-word-strip { min-height: 67px; background: var(--atelier-sage); display: flex; gap: clamp(20px, 4vw, 70px); align-items: center; justify-content: center; border-block: 1px solid #a7b59b60; font-size: 15px; }
+.atelier-word-strip svg { width: 17px; stroke-width: 1; }
+.atelier-collections { padding: 96px 0 90px; scroll-margin-top: 105px; }
+.atelier-section-heading { display: flex; justify-content: space-between; gap: 30px; align-items: end; margin-bottom: 40px; }
+.atelier-section-heading > p { color: #6e665e; font-size: 14px; line-height: 1.9; max-width: 380px; }
+.atelier-collection-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; }
+.atelier-collection:nth-child(even) { margin-top: 38px; }
+.atelier-collection-photo { overflow: hidden; position: relative; background: #eae2d6; }
+.atelier-collection-photo img { width: 100%; aspect-ratio: 4/5; object-fit: cover; transition: transform .5s; }
+.atelier-collection:hover img { transform: scale(1.04); }
+.atelier-collection-photo > span { position: absolute; inset-inline-start: 15px; top: 15px; padding: 4px 9px; background: var(--atelier-cream); font-size: 11px; }
+.atelier-collection-caption { display: flex; justify-content: space-between; align-items: start; padding-block: 18px 12px; border-bottom: 1px solid #d9d0c5; gap: 10px; }
+.atelier-collection h3 { font-size: 19px; margin-bottom: 4px; font-weight: 500; }
+.atelier-collection p { color: #746b61; font-size: 12px; }
+.atelier-signature { padding: 48px 0 90px; }
+.atelier-signature-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 7%; align-items: center; }
+.atelier-signature-photo img { aspect-ratio: 6/5; object-fit: cover; width: 100%; border-radius: 2px 2px 130px 2px; }
+.atelier-signature-copy > p:not(.atelier-eyebrow), .atelier-fruit-copy > p:not(.atelier-eyebrow) { font-size: 15px; color: #6e665e; line-height: 1.95; margin-top: 25px; max-width: 400px; }
+.atelier-taste-list { display: flex; gap: 0; margin-block: 27px; flex-wrap: wrap; }
+.atelier-taste-list span { font-size: 13px; padding-inline: 15px; border-inline-start: 1px solid #c3b9a9; }
+.atelier-taste-list span:first-child { border: 0; padding-inline-start: 0; }
+.atelier-fruit { padding-block: 84px; background: #ecefe4; }
+.atelier-fruit-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 8%; align-items: center; }
+.atelier-fruit-copy em { color: #4e6147; }
+.atelier-fruit-flavors { display: flex; flex-wrap: wrap; gap: 10px 18px; margin-block: 28px; padding: 0; list-style: none; max-width: 370px; }
+.atelier-fruit-flavors li { border-bottom: 1px solid #b7c1a9; font-size: 13px; padding-bottom: 3px; }
+.atelier-fruit-photo img { width: 100%; aspect-ratio: 1.35; object-fit: cover; border-radius: 2px 80px 2px 2px; }
+.atelier-fruit-photo figcaption { display: flex; justify-content: space-between; gap: 12px; font-size: 11px; padding-top: 16px; color: #5d6956; }
+.atelier-catalogue { position: relative; padding-block: 100px 90px; }
+.atelier-gallery-anchor { position: absolute; top: 0; height: 0; width: 0; scroll-margin-top: 100px; }
+.atelier-catalogue-heading { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 34px; }
+.atelier-catalogue-intro { max-width: 360px; font-size: 14px; line-height: 1.9; color: #6e665e; }
+.atelier-catalogue-toolbar { padding-block: 0 24px; margin-bottom: 28px; border-bottom: 1px solid #d9d0c5; display: flex; justify-content: space-between; gap: 20px; align-items: center; }
+.atelier-filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.atelier-filter { background: transparent; border: 1px solid #d3c7b9; border-radius: 2px; padding: 10px 17px; min-height: 44px; font-size: 12px; transition: background .2s, color .2s; }
+.atelier-filter:hover { background: #f0e9df; }
+.atelier-filter.is-active { color: white; background: var(--atelier-wine); border-color: var(--atelier-wine); }
+.atelier-catalogue-count { white-space: nowrap; color: #76695e; font-size: 12px; }
+.atelier-product-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 36px 24px; }
+.atelier-product-trigger { display: block; width: 100%; text-align: right; position: relative; }
+.atelier-product-photo { display: block; position: relative; overflow: hidden; width: 100%; aspect-ratio: 4/5; background: #eae2d6; transition: filter .2s; }
+.atelier-product-photo img { width: 100%; height: 100%; object-fit: cover; }
+.atelier-product-trigger:hover .atelier-product-photo { filter: brightness(.96); }
+.atelier-product-zoom { position: absolute; left: 14px; bottom: 14px; height: 34px; width: 34px; background: #fffaf0ed; display: grid; place-items: center; border-radius: 50%; color: var(--atelier-wine); }
+.atelier-product-zoom svg { width: 17px; }
+.atelier-product-meta { display: flex; align-items: end; justify-content: space-between; margin-top: 14px; gap: 10px; }
+.atelier-product-category { display: block; font-size: 10px; letter-spacing: .03em; color: #7c7268; }
+.atelier-product-name { display: block; font-size: 17px; font-weight: 500; margin-top: 2px; }
+.atelier-product-number { font-size: 11px; color: #8b7b6f; }
+.atelier-catalogue-note { display: flex; justify-content: space-between; gap: 20px; border-top: 1px solid #d9d0c5; padding-top: 26px; margin-top: 42px; font-size: 13px; color: #72675b; }
+.atelier-catalogue-note a { display: inline-flex; align-items: center; gap: 10px; color: var(--atelier-wine); text-decoration: underline; text-underline-offset: 5px; }
+.atelier-product-dialog h2 { font-family: "Noto Serif Hebrew", Georgia, serif; }
+.atelier-product-dialog { width: calc(100% - 24px); }
+.atelier-product-dialog > button { background: #faf6ee; width: 40px; height: 40px; display: grid; place-items: center; opacity: 1; }
+.atelier-ordering { background: var(--atelier-wine); color: #faf6ee; padding-block: 80px 60px; }
+.atelier-order-top { display: flex; align-items: center; justify-content: space-between; gap: 60px; }
+.atelier-ordering h2 { font-size: clamp(54px,6.8vw,94px); line-height: 1.17; }
+.atelier-ordering em { color: #e9c6c2; }
+.atelier-order-invite { max-width: 360px; display: flex; flex-direction: column; align-items: start; }
+.atelier-order-invite > svg { margin-bottom: 25px; color: #ead8bd; }
+.atelier-order-invite p { line-height: 1.9; color: #f4e6e1; font-size: 14px; margin-bottom: 25px; }
+.atelier-button-light { color: var(--atelier-wine); background: var(--atelier-cream); }
+.atelier-button-light:hover { background: #e9dace; color: var(--atelier-wine); }
+.atelier-order-steps { border-top: 1px solid #f4e5de40; margin-top: 60px; padding-top: 32px; display: grid; grid-template-columns: repeat(3,1fr); gap: 30px; list-style: none; }
+.atelier-order-steps li { display: flex; gap: 20px; }
+.atelier-order-steps li > span { font-size: 12px; color: #e7c5bd; padding-top: 5px; }
+.atelier-order-steps h3 { font-size: 19px; font-weight: 500; }
+.atelier-order-steps p { font-size: 12px; color: #eed7d4; margin-top: 6px; }
+.atelier-faq { padding-block: 85px; }
+.atelier-faq-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 9%; }
+.atelier-faq-items details { border-bottom: 1px solid #d6cfc4; padding-block: 23px; }
+.atelier-faq-items details:first-child { border-top: 1px solid #d6cfc4; }
+.atelier-faq-items summary { cursor: pointer; font-weight: 500; font-size: 15px; display: flex; justify-content: space-between; gap: 20px; list-style: none; }
+.atelier-faq-items summary::-webkit-details-marker { display: none; }
+.atelier-faq-items summary span { font-size: 22px; line-height: 1; font-weight: 400; transition: transform .2s; }
+.atelier-faq-items details[open] summary span { transform: rotate(45deg); }
+.atelier-faq-items details p { font-size: 14px; line-height: 1.95; color: #6e665e; padding-top: 18px; max-width: 580px; }
+.atelier-faq-items a { text-decoration: underline; text-underline-offset: 4px; }
+@media (min-width: 1500px) { .atelier-hero { padding-top: 60px; } .atelier-hero-grid { padding-bottom: 90px; } }
+@media (max-width: 1023px) {
+  .atelier-container { width: calc(100% - 56px); }
+  .atelier-hero-grid { gap: 4%; } .atelier-hero h1 { font-size: 70px; }
+  .atelier-hero-photo { height: 460px; } .atelier-hero-small { width: 190px; inset-inline-end: -8px; }
+  .atelier-seal { width: 95px; height: 95px; font-size: 11px; inset-inline-start: -10px; } .atelier-seal svg { width: 20px; }
+  .atelier-collection-grid { gap: 16px; } .atelier-collection h3 { font-size: 16px; }
+  .atelier-product-grid { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 28px 18px; }
+  .atelier-catalogue-toolbar { flex-direction: column; align-items: start; }
+}
+@media (max-width: 767px) {
+  html { scroll-padding-top: 85px; }
+  .atelier-container { width: calc(100% - 40px); }
+  .atelier-eyebrow { font-size: 11px; margin-bottom: 16px; }
+  .atelier-hero { padding-top: 28px; }
+  .atelier-hero-grid { grid-template-columns: 1fr; padding-bottom: 35px; gap: 34px; }
+  .atelier-hero-copy { padding-block: 0; }
+  .atelier-hero h1 { font-size: clamp(62px,12vw,86px); line-height: 1.12; margin-bottom: 18px; }
+  .atelier-hero-description { font-size: 14px; }
+  .atelier-hero-actions { margin-top: 22px; gap: 22px; }
+  .atelier-hero-footnote { display: none; }
+  .atelier-button { padding: 13px 19px; gap: 17px; font-size: 12px; } .atelier-text-link { font-size: 12px; }
+  .atelier-hero-visual { padding-inline: 0; padding-bottom: 35px; width: 92%; margin-inline: auto; }
+  .atelier-hero-photo { height: 355px; border-radius: 44% 44% 2px 2px; }
+  .atelier-seal { top: 10px; inset-inline-start: -14px; width: 94px; height: 94px; }
+  .atelier-hero-small { width: 164px; inset-inline-end: -10px; }
+  .atelier-hero-small span { font-size: 9px; padding-top: 6px; }
+  .atelier-word-strip { justify-content: center; flex-wrap: wrap; gap: 12px 22px; padding: 17px 20px; font-size: 11px; min-height: 60px; }
+  .atelier-word-strip svg { width: 12px; } .atelier-word-strip svg:nth-of-type(2) { display: none; }
+  .atelier-collections, .atelier-catalogue { padding-block: 56px; }
+  .atelier-section-heading, .atelier-catalogue-heading { align-items: start; flex-direction: column; gap: 18px; margin-bottom: 28px; }
+  .atelier-section-heading > p, .atelier-catalogue-intro { font-size: 13px; }
+  .atelier-collection-grid { grid-template-columns: repeat(2,1fr); gap: 20px 16px; }
+  .atelier-collection:nth-child(even) { margin-top: 25px; }
+  .atelier-collection-caption { padding-block: 12px; } .atelier-collection-caption svg { width: 18px; flex-shrink: 0; }
+  .atelier-collection h3 { font-size: 15px; } .atelier-collection p { font-size: 10px; }
+  .atelier-signature { padding-block: 10px 56px; } .atelier-signature-grid { grid-template-columns: 1fr; gap: 28px; }
+  .atelier-signature-photo img { aspect-ratio: 1.3; border-bottom-left-radius: 75px; }
+  .atelier-signature-copy > p:not(.atelier-eyebrow), .atelier-fruit-copy > p:not(.atelier-eyebrow) { font-size: 14px; margin-top: 18px; }
+  .atelier-fruit { padding-block: 48px; } .atelier-fruit-grid { grid-template-columns: 1fr; gap: 28px; }
+  .atelier-fruit-photo img { border-top-left-radius: 50px; } .atelier-fruit-photo figcaption { font-size: 10px; }
+  .atelier-fruit-flavors { margin-block: 22px; }
+  .atelier-product-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 26px 14px; }
+  .atelier-product-name { font-size: 15px; } .atelier-product-category { font-size: 9px; }
+  .atelier-product-zoom { width: 30px; height: 30px; left: 10px; bottom: 10px; }
+  .atelier-filters { gap: 7px; } .atelier-filter { padding: 8px 12px; font-size: 11px; min-height: 42px; }
+  .atelier-catalogue-note { flex-direction: column; gap: 12px; font-size: 12px; margin-top: 30px; }
+  .atelier-ordering { padding-block: 52px 42px; } .atelier-order-top { flex-direction: column; align-items: start; gap: 30px; }
+  .atelier-ordering h2 { font-size: 62px; } .atelier-order-invite { max-width: 100%; }
+  .atelier-order-invite > svg { display: none; } .atelier-order-invite p { font-size: 13px; }
+  .atelier-order-steps { margin-top: 35px; padding-top: 28px; grid-template-columns: 1fr; gap: 25px; } .atelier-order-steps h3 { font-size: 17px; }
+  .atelier-faq { padding-block: 52px; } .atelier-faq-grid { grid-template-columns: 1fr; gap: 28px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

@@ -83,7 +83,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Secular One", "sans-serif"],
+        display: ["Noto Serif Hebrew", "Georgia", "serif"],
         body: ["Rubik", "sans-serif"],
       },
       colors: {
