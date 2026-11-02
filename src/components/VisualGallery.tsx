@@ -1,21 +1,8 @@
 import { useEffect, useState } from "react";
 import { ArrowUpLeft, MessageCircle, Plus } from "lucide-react";
 import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import pistachio from "@/assets/cookie-pistachio.jpg";
-import kinder from "@/assets/cookie-kinder.jpg";
-import cakeRound from "@/assets/cake-round.jpg";
-import cakeCollection from "@/assets/cake-collection.jpg";
-import dessertBox from "@/assets/dessert-box.jpg";
-import fruitDesserts from "@/assets/fruit-desserts.jpg";
-
-const products = [
-  { src: cakeRound, alt: "עוגה עגולה מעוצבת בעבודת יד", label: "עוגה מעוצבת", category: "עוגות מעוצבות" },
-  { src: cakeCollection, alt: "מבחר עוגות פס וקינוחים מעוצבים", label: "עוגות פס וקינוחים", category: "עוגות פס" },
-  { src: dessertBox, alt: "מארז קינוחים בעבודת יד", label: "מארז מתוק", category: "מארזים" },
-  { src: fruitDesserts, alt: "קינוחי פירות בעבודת יד", label: "קינוחי פירות", category: "קינוחי פירות" },
-  { src: pistachio, alt: "עוגיית פיסטוק", label: "פיסטוק", category: "עוגיות" },
-  { src: kinder, alt: "עוגיית שוקולד וקינדר", label: "שוקולד וקינדר", category: "עוגיות" },
-] as const;
+import { products } from "@/content/catalogue";
+import CataloguePhoto from "@/components/CataloguePhoto";
 
 const filters = ["הכל", "עוגות מעוצבות", "עוגות פס", "קינוחי פירות", "מארזים", "עוגיות"] as const;
 type Filter = (typeof filters)[number];
@@ -41,8 +28,8 @@ function ProductTile({ product, index }: { product: Product; index: number }) {
       <Dialog>
         <DialogTrigger asChild>
           <button type="button" className="atelier-product-trigger" aria-label={`לצפייה בתמונה ובפרטים: ${product.label}`}>
-            <span className="atelier-product-photo">
-              <img src={product.src} alt={product.alt} width={720} height={900} loading="lazy" decoding="async" />
+            <span className={`atelier-product-photo ${product.originalCrop ? "is-original-crop" : ""}`}>
+              <CataloguePhoto product={product} />
               <span className="atelier-product-zoom" aria-hidden="true"><Plus size={20} /></span>
             </span>
             <span className="atelier-product-meta">
@@ -53,13 +40,13 @@ function ProductTile({ product, index }: { product: Product; index: number }) {
         </DialogTrigger>
         <DialogContent dir="rtl" className="atelier-product-dialog max-h-[92dvh] w-[calc(100%-1.5rem)] max-w-5xl overflow-y-auto rounded-2xl border-0 bg-[#faf6ee] p-5 sm:p-7">
           <div className="grid gap-6 md:grid-cols-[1.2fr_1fr] md:items-center">
-            <div className="overflow-hidden rounded-xl bg-[#eae6de]">
-              <img src={product.src} alt={product.alt} width={720} height={900} className="max-h-[54dvh] w-full object-contain md:max-h-[76dvh]" />
+            <div className={`atelier-dialog-photo overflow-hidden rounded-xl bg-[#eae6de] ${product.originalCrop ? "is-original-crop" : ""}`}>
+              <CataloguePhoto product={product} enlarged />
             </div>
             <div className="text-right md:py-10">
               <p className="atelier-eyebrow">{product.category}</p>
               <DialogTitle className="atelier-heading mt-3 text-3xl sm:text-4xl">{product.label}</DialogTitle>
-              <DialogDescription className="mt-5 text-base leading-8 text-[#655d56]">רוצים משהו בכיוון הזה? כתבו לנו בוואטסאפ ונתאם יחד את ההזמנה. כל הזמנה בתיאום מראש.</DialogDescription>
+              <DialogDescription className="mt-5 text-base leading-8 text-[#655d56]">{product.description} כל הזמנה בתיאום מראש.</DialogDescription>
               <a href={`https://wa.me/972546791198?text=${message}`} target="_blank" rel="noopener noreferrer" className="atelier-button atelier-button-primary mt-7 inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-[#632c40] px-5 text-sm font-semibold text-white transition hover:bg-[#4d2031] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#632c40]"><MessageCircle size={19} aria-hidden="true" />לפרטים על {product.label}<ArrowUpLeft size={18} aria-hidden="true" /></a>
             </div>
           </div>
