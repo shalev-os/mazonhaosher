@@ -3,6 +3,7 @@ import { Menu, MessageCircle, X } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const navigation = [
+  { href: "#hanukkah-2026", label: "סופגניות 2026" },
   { href: "#collections", label: "הקולקציות" },
   { href: "#gallery", label: "הקטלוג" },
   { href: "#ordering", label: "איך מזמינים" },
@@ -45,7 +46,7 @@ export default function TopToolbar() {
           </span>
         </a>
 
-        <nav aria-label="ניווט ראשי" className="hidden items-center gap-7 text-sm font-medium md:flex">
+        <nav aria-label="ניווט ראשי" className="hidden items-center gap-7 text-sm font-medium lg:flex">
           {navigation.map((item) => <a key={item.href} href={item.href} className="border-b border-transparent py-3 transition-colors hover:border-[#632c40] hover:text-[#632c40] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#632c40]">{item.label}</a>)}
         </nav>
 
@@ -54,12 +55,12 @@ export default function TopToolbar() {
             <MessageCircle size={17} aria-hidden="true" />
             <span className="sm:hidden">לתיאום הזמנה</span><span className="hidden sm:inline">נדבר על משהו מתוק</span>
           </a>
-          <button ref={menuButtonRef} type="button" aria-label={menuOpen ? "סגירת התפריט" : "פתיחת התפריט"} aria-expanded={menuOpen} aria-controls="mobile-navigation" onClick={() => setMenuOpen((open) => !open)} className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-[#632c40] transition-colors hover:bg-[#632c40]/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#632c40] md:hidden">
+          <button ref={menuButtonRef} type="button" aria-label={menuOpen ? "סגירת התפריט" : "פתיחת התפריט"} aria-expanded={menuOpen} aria-controls="mobile-navigation" onClick={() => setMenuOpen((open) => !open)} className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-[#632c40] transition-colors hover:bg-[#632c40]/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#632c40] lg:hidden">
             {menuOpen ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
           </button>
         </div>
       </div>
-      {menuOpen && <nav id="mobile-navigation" aria-label="ניווט במובייל" className="absolute inset-x-0 top-full border-b border-[#302b27]/10 bg-[#faf6ee] shadow-[0_18px_25px_rgba(48,43,39,.08)] md:hidden"><div className="atelier-container flex flex-col py-4">{navigation.map((item) => <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)} className="border-b border-[#302b27]/10 py-4 text-base font-medium text-[#302b27] last:border-0 hover:text-[#632c40] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#632c40]">{item.label}</a>)}</div></nav>}
+      {menuOpen && <nav id="mobile-navigation" aria-label="ניווט במובייל" className="absolute inset-x-0 top-full border-b border-[#302b27]/10 bg-[#faf6ee] shadow-[0_18px_25px_rgba(48,43,39,.08)] lg:hidden"><div className="atelier-container flex flex-col py-4">{navigation.map((item) => <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)} className="border-b border-[#302b27]/10 py-4 text-base font-medium text-[#302b27] last:border-0 hover:text-[#632c40] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#632c40]">{item.label}</a>)}</div></nav>}
     </header>
   );
 }

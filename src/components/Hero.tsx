@@ -1,4 +1,4 @@
-import { ArrowDown, ArrowUpLeft, Flower2 } from "lucide-react";
+import { ArrowDown, ArrowUpLeft, Flower2, Sparkles } from "lucide-react";
 import cookies from "@/assets/cookies-collection.jpg";
 import fruit from "@/assets/fruit-desserts.jpg";
 
@@ -10,6 +10,7 @@ export default function Hero() {
           <p className="atelier-eyebrow"><span className="atelier-dot" />מזון האושר · הקונדיטוריה של אלמוג</p>
           <h1 id="hero-title">קצת מתוק.<br /><em>הרבה אושר.</em></h1>
           <p className="atelier-hero-description">עוגיות נדיבות, עוגות וקינוחים עם אופי.<br />בעבודת יד, בהזמנה מראש, ובדיוק לרגע שלכם.</p>
+          <a href="#hanukkah-2026" className="atelier-seasonal-teaser"><Sparkles size={16} aria-hidden="true" />קולקציית הסופגניות 2026 כאן<ArrowUpLeft size={16} aria-hidden="true" /></a>
           <div className="atelier-hero-actions">
             <a href="#collections" className="atelier-button">מגלים את הקולקציות<ArrowUpLeft size={19} aria-hidden="true" /></a>
             <a href="https://wa.me/972546791198" target="_blank" rel="noopener noreferrer" className="atelier-text-link">מתייעצים עם אלמוג</a>

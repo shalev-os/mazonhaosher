@@ -7,6 +7,7 @@ import FruitDesserts from "@/components/FruitDesserts";
 import VisualGallery from "@/components/VisualGallery";
 import OrderJourney from "@/components/OrderJourney";
 import CollectionIndex from "@/components/CollectionIndex";
+import HanukkahCollection from "@/components/HanukkahCollection";
 
 import { t } from "@/content/siteText";
 
@@ -25,6 +26,7 @@ const Index = () => {
       <FloatingCTA />
       <main id="main-content" tabIndex={-1}>
         <Hero />
+        <HanukkahCollection />
         <CollectionIndex />
         <ProductGallery />
         <FruitDesserts />
