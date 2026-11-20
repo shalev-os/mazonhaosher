@@ -38,7 +38,6 @@ for (const asset of assets) {
 NODE
 done
 
-sudo -v
 was_active=0
 systemctl is-active --quiet nginx && was_active=1
 was_enabled=$(systemctl is-enabled nginx 2>/dev/null || true)
