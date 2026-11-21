@@ -10,3 +10,5 @@ Production runs Nginx on Linux behind Cloudflare Tunnel. After successful valida
 The server swaps the site directory atomically and verifies that local Nginx serves the new index. It restores the prior directory if that check fails and keeps the previous successful release in `/var/www/.mazonhaosher.co.il-previous`. A revert on `main` follows the normal validation and deployment path.
 
 Check production logs with `journalctl -u osher-site-deploy@mazonhaosher.co.il -u osher-site-build@mazonhaosher.co.il`. Start a check immediately with `sudo systemctl start osher-site-deploy@mazonhaosher.co.il`. The last deployed commit is recorded in `/var/lib/osher-site-releases/mazonhaosher.co.il`.
+
+The Linux origin exposes `/_ops/healthz` for readiness checks. See the [Linux and IIS failover runbook](https://github.com/shalev-os/oshercc/blob/main/docs/high-availability.md) for the standby configuration and cutover checks.
